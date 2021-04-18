@@ -18,21 +18,21 @@ struct ContentView: View {
             
             ZStack {
                 AngularGradient(gradient: Gradient(colors: [Color.blue, Color.red]), center: .center ).edgesIgnoringSafeArea(.all)
-            VStack {
                 VStack {
-                
-                    StatsView(stats: $stats, animate: $showLastUpdate)
-                   
-                    Spacer()
+                    VStack {
+                        
+                        StatsView(stats: $stats, animate: $showLastUpdate)
+                        
+                        Spacer()
+                    }
+                    
+                    
                 }
-                
-                VStack {
+            }.navigationBarTitle("Covid Tracker 🦠").navigationBarItems(trailing:
                 Button(action: { loadData(); showLastUpdate = true }, label: {
-                    Text("Refresh datas")
-                }).padding(20).background(Color.eerie).foregroundColor(.white).clipShape(RoundedRectangle(cornerRadius: 6))
-                }
-            }
-            }.navigationBarTitle("Covid Tracker 🦠")
+                    Image(systemName: "arrow.clockwise").foregroundColor(.eerie)
+                    
+                }))
         }
     }
     
@@ -53,11 +53,11 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         
-       
+        
         
         ContentView(stats: dataExample)
     }
-  
+    
 }
 
 extension Color {

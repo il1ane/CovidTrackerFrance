@@ -13,7 +13,8 @@ struct StatsView: View {
     
     var body: some View {
         
-            
+            //TODO: adapt app for smaller screen
+        
             VStack {
                 
                 HStack {
@@ -22,7 +23,7 @@ struct StatsView: View {
                     VStack {
                         Text("Infected")
                         Spacer().frame(height : 10)
-                        Text("\(stats.infected)").foregroundColor(.pink).bold().animation(animate ? .easeIn : .none)
+                        Text("\(stats.infected)").foregroundColor(.purple).bold().animation(animate ? .easeIn : .none)
                     }.frame(minWidth: 0, idealWidth: 100, maxWidth: 300, minHeight: 0, idealHeight: 100, maxHeight: 100, alignment: .center)
                     
                     Spacer()
@@ -34,9 +35,17 @@ struct StatsView: View {
                     HStack {
                         Spacer()
                         VStack(alignment: .center) {
-                            Text("Newly \nhospitalized")
+                            
+                            Text("Hospitalized")
+                           
                             Spacer().frame(height : 10)
-                            Text("\(stats.newlyHospitalized)").foregroundColor(.pink).bold().animation(animate ? .easeIn : .none)
+                            HStack {
+                            Text("\(stats.hospitalized)").foregroundColor(.blue).bold().animation(animate ? .easeIn : .none)
+                                
+                                if animate {
+                                    Text("(+ \(stats.newlyHospitalized))").foregroundColor(.blue).animation(.easeOut)
+                                }
+                            }
                             
                         }.padding()
                         
@@ -47,9 +56,9 @@ struct StatsView: View {
                     HStack {
                         
                         VStack {
-                            Text("Intensive \nCare")
+                            Text("Intensive Care")
                             Spacer().frame(height : 10)
-                            Text("\(stats.intensiveCare)").foregroundColor(.pink).bold().animation(animate ? .easeIn : .none)
+                            Text("\(stats.intensiveCare)").foregroundColor(.orange).bold().animation(animate ? .easeIn : .none)
                             
                         }.padding()
                         
@@ -65,9 +74,9 @@ struct StatsView: View {
                     HStack {
                         
                         VStack {
-                            Text("Hospital \nDeceased")
+                            Text("Hospital Deceased")
                             Spacer().frame(height : 10)
-                            Text("\(stats.hospitalDeceased)").foregroundColor(.pink).bold().animation(animate ? .easeIn : .none)
+                            Text("\(stats.hospitalDeceased)").foregroundColor(.red).bold().animation(animate ? .easeIn : .none)
                             
                         }.padding()
                         
@@ -91,6 +100,8 @@ struct StatsView: View {
                 Text("Last API update : \(stats.lastUpdatedAtSource)").foregroundColor(.eerie)
                     }.animation(animate ? .easeIn : .none)
                     
+                } else {
+                    Text("Datas needs to be refreshed!")
                 }
                 Spacer()
             }.padding().font(.headline)
