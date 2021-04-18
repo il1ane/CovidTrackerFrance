@@ -29,14 +29,14 @@ struct ContentView: View {
                     
                     
                 }
-            }.navigationBarTitle("Covid Tracker 🦠").navigationBarItems(leading: Button(action: { isShowing.toggle()}, label: {
+            }.navigationBarTitle("Dashboard ").navigationBarItems(leading: Button(action: { isShowing.toggle()}, label: {
                 Image(systemName: "info.circle").foregroundColor(.eerie)
             }), trailing:
                 Button(action: { loadData(); showLastUpdate = true }, label: {
                 Image(systemName: "arrow.clockwise").foregroundColor(.eerie)
   }))
         }.sheet(isPresented: $isShowing, content: {
-            InfoView()
+            InfoView(isPresented: $isShowing)
         })
     }
     

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct InfoView: View {
+    @Binding var isPresented:Bool
     var body: some View {
         NavigationView {
         ZStack {
@@ -18,9 +19,6 @@ struct InfoView: View {
             Text("Where does the data come from?").bold().font(.title2)
             Spacer().frame(height: 10)
             
-            
-            
-               
         Text("Data shown are official data provided by French").font(.body)
             HStack {
             Text("government,")
@@ -28,13 +26,15 @@ struct InfoView: View {
             }
             
         }.foregroundColor(.white).padding()
-        }.navigationBarTitle("Infos")
+        }.navigationBarTitle("Infos").navigationBarItems(trailing: Button(action: { isPresented.toggle() }, label: {
+            Image(systemName: "xmark").foregroundColor(.white)
+        }))
         }
     }
 }
 
 struct InfoView_Previews: PreviewProvider {
     static var previews: some View {
-        InfoView()
+        InfoView(isPresented: .constant(true))
     }
 }
