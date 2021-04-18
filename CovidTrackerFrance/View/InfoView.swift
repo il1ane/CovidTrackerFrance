@@ -13,12 +13,15 @@ struct InfoView: View {
         ZStack {
             Color.blue.ignoresSafeArea()
         VStack(alignment: .center) {
-            Text("🇫🇷").font(.system(size: 90))
+            Image(systemName: "questionmark.circle").font(.system(size: 100))
+            Spacer().frame(height: 30)
+            Text("Where does the data come from?").bold().font(.title2)
+            Spacer().frame(height: 10)
             Text("""
-Datas shown are official datas provided by French government on :\n https://dashboard.covid19.data.gouv.fr/vue-d-ensemble?location=FRA
-""")
+Data shown are official data provided by French government on :\n https://dashboard.covid19.data.gouv.fr/vue-d-ensemble?location=FRA
+""").font(.body)
             
-        }.foregroundColor(.white).font(.title2).padding()
+        }.foregroundColor(.white).padding()
         }.navigationBarTitle("Infos")
         }
     }
