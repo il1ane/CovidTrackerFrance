@@ -17,9 +17,15 @@ struct InfoView: View {
             Spacer().frame(height: 30)
             Text("Where does the data come from?").bold().font(.title2)
             Spacer().frame(height: 10)
-            Text("""
-Data shown are official data provided by French government on :\n https://dashboard.covid19.data.gouv.fr/vue-d-ensemble?location=FRA
-""").font(.body)
+            
+            
+            
+               
+        Text("Data shown are official data provided by French").font(.body)
+            HStack {
+            Text("government,")
+                Link("accesible here.", destination: URL(string: "https://dashboard.covid19.data.gouv.fr/vue-d-ensemble?location=FRA")!).font(.body).foregroundColor(.orange)
+            }
             
         }.foregroundColor(.white).padding()
         }.navigationBarTitle("Infos")
