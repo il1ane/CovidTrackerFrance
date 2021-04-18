@@ -11,6 +11,7 @@ struct ContentView: View {
     
     @State private var showLastUpdate = false
     @State var stats: Stats
+    @State private var isShowing = false
     
     var body: some View {
         
@@ -28,12 +29,15 @@ struct ContentView: View {
                     
                     
                 }
-            }.navigationBarTitle("Covid Tracker 🦠").navigationBarItems(trailing:
+            }.navigationBarTitle("Covid Tracker 🦠").navigationBarItems(leading: Button(action: { isShowing.toggle()}, label: {
+                Image(systemName: "info.circle").foregroundColor(.eerie)
+            }), trailing:
                 Button(action: { loadData(); showLastUpdate = true }, label: {
-                    Image(systemName: "arrow.clockwise").foregroundColor(.eerie)
-                    
-                }))
-        }
+                Image(systemName: "arrow.clockwise").foregroundColor(.eerie)
+  }))
+        }.sheet(isPresented: $isShowing, content: {
+            InfoView()
+        })
     }
     
     private func loadData() {
@@ -52,8 +56,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        
-        
         
         ContentView(stats: dataExample)
     }

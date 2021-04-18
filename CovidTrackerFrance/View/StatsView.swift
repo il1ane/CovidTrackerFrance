@@ -11,9 +11,10 @@ struct StatsView: View {
     @Binding var stats: Stats
     @Binding var animate: Bool
     
+    
     var body: some View {
         
-            //TODO: adapt app for smaller screen
+            //TODO: adapt for smaller screen
         
             VStack {
                 
@@ -42,9 +43,6 @@ struct StatsView: View {
                             HStack {
                             Text("\(stats.hospitalized)").foregroundColor(.blue).bold().animation(animate ? .easeIn : .none)
                                 
-                                if animate {
-                                    Text("(+ \(stats.newlyHospitalized))").foregroundColor(.blue).animation(.easeOut)
-                                }
                             }
                             
                         }.padding()
@@ -104,7 +102,7 @@ struct StatsView: View {
                     Text("Datas needs to be refreshed!")
                 }
                 Spacer()
-            }.padding().font(.headline)
+            }.padding()
             
         
     }
