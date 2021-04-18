@@ -9,7 +9,7 @@ import SwiftUI
 
 struct StatsView: View {
     @Binding var stats: Stats
-    @Binding var showLastApiUpdate: Bool
+    @Binding var animate: Bool
     
     var body: some View {
         
@@ -22,8 +22,7 @@ struct StatsView: View {
                     VStack {
                         Text("Infected")
                         Spacer().frame(height : 10)
-                        Text("\(stats.infected)").foregroundColor(.pink).bold()
-                        
+                        Text("\(stats.infected)").foregroundColor(.pink).bold().animation(animate ? .easeIn : .none)
                     }.frame(minWidth: 0, idealWidth: 100, maxWidth: 300, minHeight: 0, idealHeight: 100, maxHeight: 100, alignment: .center)
                     
                     Spacer()
@@ -37,7 +36,7 @@ struct StatsView: View {
                         VStack(alignment: .center) {
                             Text("Newly \nhospitalized")
                             Spacer().frame(height : 10)
-                            Text("\(stats.newlyHospitalized)").foregroundColor(.pink).bold()
+                            Text("\(stats.newlyHospitalized)").foregroundColor(.pink).bold().animation(animate ? .easeIn : .none)
                             
                         }.padding()
                         
@@ -50,7 +49,7 @@ struct StatsView: View {
                         VStack {
                             Text("Intensive \nCare")
                             Spacer().frame(height : 10)
-                            Text("\(stats.intensiveCare)").foregroundColor(.pink).bold()
+                            Text("\(stats.intensiveCare)").foregroundColor(.pink).bold().animation(animate ? .easeIn : .none)
                             
                         }.padding()
                         
@@ -68,7 +67,7 @@ struct StatsView: View {
                         VStack {
                             Text("Hospital \nDeceased")
                             Spacer().frame(height : 10)
-                            Text("\(stats.hospitalDeceased)").foregroundColor(.pink).bold()
+                            Text("\(stats.hospitalDeceased)").foregroundColor(.pink).bold().animation(animate ? .easeIn : .none)
                             
                         }.padding()
                         
@@ -80,17 +79,17 @@ struct StatsView: View {
                         VStack {
                             Text("Recovered")
                             Spacer().frame(height : 10)
-                            Text("\(stats.recoverd )").foregroundColor(.green).bold()
+                            Text("\(stats.recoverd )").foregroundColor(.green).bold().animation(animate ? .easeIn : .none)
                         }.padding()
                         
                         Spacer()
                 }.padding(26).background(Color.eerie).clipShape(RoundedRectangle(cornerRadius: 22)).foregroundColor(.white)
                 }
-                if showLastApiUpdate {
+                if animate {
                     
                     VStack {
                 Text("Last API update : \(stats.lastUpdatedAtSource)").foregroundColor(.eerie)
-                    }.animation(.linear)
+                    }.animation(animate ? .easeIn : .none)
                     
                 }
                 Spacer()
@@ -102,6 +101,6 @@ struct StatsView: View {
 
 struct StatsView_Previews: PreviewProvider {
     static var previews: some View {
-        StatsView(stats: .constant(dataExample), showLastApiUpdate: .constant(true))
+        StatsView(stats: .constant(dataExample), animate: .constant(true))
     }
 }

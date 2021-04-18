@@ -21,7 +21,7 @@ struct ContentView: View {
             VStack {
                 VStack {
                 
-                    StatsView(stats: $stats, showLastApiUpdate: $showLastUpdate)
+                    StatsView(stats: $stats, animate: $showLastUpdate)
                    
                     Spacer()
                 }
