@@ -12,85 +12,83 @@ struct StatsView: View {
     
     var body: some View {
         
-        NavigationView {
-          
-                
             
+            VStack {
                 
-                VStack {
-                
-                    HStack {
-                        
-                        Spacer()
-                        VStack {
-                            Text("Infected")
-                            Spacer().frame(height : 10)
-                            Text("\(stats.infected)").foregroundColor(.pink)
-                            
-                        }
-                        Spacer()
-                    }.padding(35).background(Color.black).clipShape(RoundedRectangle(cornerRadius: 22)).foregroundColor(.white)
-                    
-            HStack {
-                        
-                    Spacer()
                 HStack {
                     
+                    Spacer()
                     VStack {
+                        Text("Infected")
+                        Spacer().frame(height : 10)
+                        Text("\(stats.infected)").foregroundColor(.pink).bold()
+                        
+                    }.frame(minWidth: 0, idealWidth: 100, maxWidth: 300, minHeight: 0, idealHeight: 100, maxHeight: 100, alignment: .center)
+                    
+                    Spacer()
+                }.padding().background(Color.eerie).clipShape(RoundedRectangle(cornerRadius: 22)).foregroundColor(.white)
+                
+                HStack {
+                    
+                    
+                    HStack {
+                        Spacer()
+                        VStack(alignment: .center) {
                             Text("Newly \nhospitalized")
-                                Spacer().frame(height : 10)
-                            Text("\(stats.newlyHospitalized)").foregroundColor(.pink)
-                                
-                    }.padding(25).background(Color.black).clipShape(RoundedRectangle(cornerRadius: 22)).foregroundColor(.white)
+                            Spacer().frame(height : 10)
+                            Text("\(stats.newlyHospitalized)").foregroundColor(.pink).bold()
+                            
+                        }.padding()
+                        
+                        Spacer()
+                    }.padding().background(Color.eerie).clipShape(RoundedRectangle(cornerRadius: 22)).foregroundColor(.white)
                     
-                    
+                    Spacer()
+                    HStack {
+                        
+                        VStack {
+                            Text("Intensive \nCare")
+                            Spacer().frame(height : 10)
+                            Text("\(stats.newlyHospitalized)").foregroundColor(.pink).bold()
+                            
+                        }.padding()
+                        
+                        
+                    }.padding().background(Color.eerie).clipShape(RoundedRectangle(cornerRadius: 22)).foregroundColor(.white)
                 }
+                
+                
+                HStack {
+                    
+                    
+                    
+                    HStack {
+                        
+                        VStack {
+                            Text("Hospital \nDeceased")
+                            Spacer().frame(height : 10)
+                            Text("\(stats.hospitalDeceased)").foregroundColor(.pink).bold()
+                            
+                        }.padding()
+                        
+                        
+                    }.padding().background(Color.eerie).clipShape(RoundedRectangle(cornerRadius: 22)).foregroundColor(.white)
+                    Spacer()
                     HStack {
                         Spacer()
                         VStack {
-                        Text("Intensive \nCare")
+                            Text("Recovered")
                             Spacer().frame(height : 10)
-                        Text("\(stats.intensiveCare )").foregroundColor(.pink)
-                        }
-                        Spacer()
-
+                            Text("\(stats.recoverd )").foregroundColor(.green).bold()
+                        }.padding()
                         
-                    }.padding(25).background(Color.black).clipShape(RoundedRectangle(cornerRadius: 22)).foregroundColor(.white)
+                        Spacer()
+                }.padding(26).background(Color.eerie).clipShape(RoundedRectangle(cornerRadius: 22)).foregroundColor(.white)
+                }
                 Spacer()
-                    }
-                    
-                    
-                    HStack {
-                                
-                            Spacer()
-                        HStack {
-                            
-                            VStack {
-                                    Text("Hospital \nDeceased")
-                                        Spacer().frame(height : 10)
-                                Text("\(stats.hospitalDeceased)").foregroundColor(.pink)
-                                        
-                            }.padding(30).background(Color.black).clipShape(RoundedRectangle(cornerRadius: 22)).foregroundColor(.white)
-                            
-                            
-                        }
-                            HStack {
-                                Spacer()
-                                VStack {
-                                Text("Recovered")
-                                    Spacer().frame(height : 10)
-                                    Text("\(stats.recoverd )").foregroundColor(.green)
-                                }
-                                Spacer()
-
-                                
-                            }.padding(30).background(Color.black).clipShape(RoundedRectangle(cornerRadius: 22)).foregroundColor(.white)
-                        Spacer()
-                            }
-                    Spacer()
-                }.padding().font(.title2)
-                        
-        }
+            }.padding().font(.headline)
+            
+        
     }
 }
 

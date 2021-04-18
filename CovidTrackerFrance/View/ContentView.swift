@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State private var showLastUpdate = false
     @State var stats: Stats
     
     var body: some View {
@@ -19,11 +20,19 @@ struct ContentView: View {
                 
                 StatsView(stats: $stats)
                     
+                    if showLastUpdate {
+                        
+                        VStack {
+                            Text("Last API update :").animation(.easeIn)
+                    Text("\(stats.lastUpdatedAtSource)").foregroundColor(.gray)
+                        }.animation(.linear)
+                        
+                    }
+                    Spacer()
                 }
                 
-                Text("Last update :")
-                Text("\(stats.lastUpdatedAtSource)").foregroundColor(.gray)
-                Button(action: { loadData() }, label: {
+               
+                Button(action: { loadData(); showLastUpdate = true }, label: {
                     Text("Refresh datas")
                 }).padding(10).background(Color.blue).foregroundColor(.white).clipShape(RoundedRectangle(cornerRadius: 6))
                 
@@ -53,4 +62,8 @@ struct ContentView_Previews: PreviewProvider {
         ContentView(stats: dataExample)
     }
   
+}
+
+extension Color {
+    public static var eerie = Color("Eerie")
 }
