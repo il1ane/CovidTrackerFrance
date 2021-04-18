@@ -18,6 +18,7 @@ struct ContentView: View {
                 VStack {
                 
                 StatsView(stats: $stats)
+                    
                 }
                 
                 Text("Last update :")

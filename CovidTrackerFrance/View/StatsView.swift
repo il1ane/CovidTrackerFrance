@@ -13,40 +13,83 @@ struct StatsView: View {
     var body: some View {
         
         NavigationView {
-            VStack {
+          
                 
-            VStack(alignment: .leading) {
             
-                HStack {
-                    Text("Infected :")
-                    Spacer()
-                    Text("\(stats.infected)").foregroundColor(.pink)
-                }
                 
-                HStack {
-                    Text("Hospital deceased :")
-                    Spacer()
-                    Text("\(stats.hospitalDeceased)").foregroundColor(.pink)
-                }
-                HStack {
-                    Text("Intensive Care :")
-                    Spacer()
-                    Text("\(stats.intensiveCare )").foregroundColor(.pink)
-                }
-                HStack {
-                    Text("Newly hospitalized :")
-                    Spacer()
-                    Text("\(stats.newlyHospitalized )").foregroundColor(.pink)
-                }
-                HStack {
-                    Text("Recovered :")
-                    Spacer()
-                    Text("\(stats.recoverd )").foregroundColor(.pink)
-                }
+                VStack {
                 
-            }.padding()
-    Spacer()
-           }
+                    HStack {
+                        
+                        Spacer()
+                        VStack {
+                            Text("Infected")
+                            Spacer().frame(height : 10)
+                            Text("\(stats.infected)").foregroundColor(.pink)
+                            
+                        }
+                        Spacer()
+                    }.padding(35).background(Color.black).clipShape(RoundedRectangle(cornerRadius: 22)).foregroundColor(.white)
+                    
+            HStack {
+                        
+                    Spacer()
+                HStack {
+                    
+                    VStack {
+                            Text("Newly \nhospitalized")
+                                Spacer().frame(height : 10)
+                            Text("\(stats.newlyHospitalized)").foregroundColor(.pink)
+                                
+                    }.padding(25).background(Color.black).clipShape(RoundedRectangle(cornerRadius: 22)).foregroundColor(.white)
+                    
+                    
+                }
+                    HStack {
+                        Spacer()
+                        VStack {
+                        Text("Intensive \nCare")
+                            Spacer().frame(height : 10)
+                        Text("\(stats.intensiveCare )").foregroundColor(.pink)
+                        }
+                        Spacer()
+
+                        
+                    }.padding(25).background(Color.black).clipShape(RoundedRectangle(cornerRadius: 22)).foregroundColor(.white)
+                Spacer()
+                    }
+                    
+                    
+                    HStack {
+                                
+                            Spacer()
+                        HStack {
+                            
+                            VStack {
+                                    Text("Hospital \nDeceased")
+                                        Spacer().frame(height : 10)
+                                Text("\(stats.hospitalDeceased)").foregroundColor(.pink)
+                                        
+                            }.padding(30).background(Color.black).clipShape(RoundedRectangle(cornerRadius: 22)).foregroundColor(.white)
+                            
+                            
+                        }
+                            HStack {
+                                Spacer()
+                                VStack {
+                                Text("Recovered")
+                                    Spacer().frame(height : 10)
+                                    Text("\(stats.recoverd )").foregroundColor(.green)
+                                }
+                                Spacer()
+
+                                
+                            }.padding(30).background(Color.black).clipShape(RoundedRectangle(cornerRadius: 22)).foregroundColor(.white)
+                        Spacer()
+                            }
+                    Spacer()
+                }.padding().font(.title2)
+                        
         }
     }
 }
