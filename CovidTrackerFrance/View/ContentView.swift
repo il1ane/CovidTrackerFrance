@@ -15,27 +15,23 @@ struct ContentView: View {
     var body: some View {
         
         NavigationView {
+            
+            ZStack {
+                AngularGradient(gradient: Gradient(colors: [Color.blue, Color.red]), center: .center ).edgesIgnoringSafeArea(.all)
             VStack {
                 VStack {
                 
-                StatsView(stats: $stats)
-                    
-                    if showLastUpdate {
-                        
-                        VStack {
-                            Text("Last API update :").animation(.easeIn)
-                    Text("\(stats.lastUpdatedAtSource)").foregroundColor(.gray)
-                        }.animation(.linear)
-                        
-                    }
+                    StatsView(stats: $stats, showLastApiUpdate: $showLastUpdate)
+                   
                     Spacer()
                 }
                 
-               
+                VStack {
                 Button(action: { loadData(); showLastUpdate = true }, label: {
                     Text("Refresh datas")
-                }).padding(10).background(Color.blue).foregroundColor(.white).clipShape(RoundedRectangle(cornerRadius: 6))
-                
+                }).padding(20).background(Color.eerie).foregroundColor(.white).clipShape(RoundedRectangle(cornerRadius: 6))
+                }
+            }
             }.navigationBarTitle("Covid Tracker 🦠")
         }
     }

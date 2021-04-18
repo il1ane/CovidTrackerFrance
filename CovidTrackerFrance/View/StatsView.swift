@@ -9,6 +9,7 @@ import SwiftUI
 
 struct StatsView: View {
     @Binding var stats: Stats
+    @Binding var showLastApiUpdate: Bool
     
     var body: some View {
         
@@ -49,7 +50,7 @@ struct StatsView: View {
                         VStack {
                             Text("Intensive \nCare")
                             Spacer().frame(height : 10)
-                            Text("\(stats.newlyHospitalized)").foregroundColor(.pink).bold()
+                            Text("\(stats.intensiveCare)").foregroundColor(.pink).bold()
                             
                         }.padding()
                         
@@ -85,6 +86,13 @@ struct StatsView: View {
                         Spacer()
                 }.padding(26).background(Color.eerie).clipShape(RoundedRectangle(cornerRadius: 22)).foregroundColor(.white)
                 }
+                if showLastApiUpdate {
+                    
+                    VStack {
+                Text("Last API update : \(stats.lastUpdatedAtSource)").foregroundColor(.eerie)
+                    }.animation(.linear)
+                    
+                }
                 Spacer()
             }.padding().font(.headline)
             
@@ -94,6 +102,6 @@ struct StatsView: View {
 
 struct StatsView_Previews: PreviewProvider {
     static var previews: some View {
-        StatsView(stats: .constant(dataExample))
+        StatsView(stats: .constant(dataExample), showLastApiUpdate: .constant(true))
     }
 }
