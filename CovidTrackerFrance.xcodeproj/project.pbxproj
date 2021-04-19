@@ -14,6 +14,7 @@
 		9183046E262B85AD009733FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9183046D262B85AD009733FC /* Assets.xcassets */; };
 		91830471262B85AD009733FC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91830470262B85AD009733FC /* Preview Assets.xcassets */; };
 		9183047C262B85F6009733FC /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9183047B262B85F6009733FC /* Stats.swift */; };
+		91E3AB43262D06B500F416BF /* ConfirmedDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E3AB42262D06B500F416BF /* ConfirmedDetailView.swift */; };
 		91E5227D262C49BD00630D6B /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E5227C262C49BD00630D6B /* StatsView.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		91830470262B85AD009733FC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		91830472262B85AD009733FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9183047B262B85F6009733FC /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
+		91E3AB42262D06B500F416BF /* ConfirmedDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmedDetailView.swift; sourceTree = "<group>"; };
 		91E5227C262C49BD00630D6B /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				9183046B262B85AC009733FC /* ContentView.swift */,
+				91E3AB42262D06B500F416BF /* ConfirmedDetailView.swift */,
 				91E5227C262C49BD00630D6B /* StatsView.swift */,
 				911C7763262CDB690096F2BE /* InfoView.swift */,
 			);
@@ -170,6 +173,7 @@
 				91E5227D262C49BD00630D6B /* StatsView.swift in Sources */,
 				9183046C262B85AC009733FC /* ContentView.swift in Sources */,
 				9183047C262B85F6009733FC /* Stats.swift in Sources */,
+				91E3AB43262D06B500F416BF /* ConfirmedDetailView.swift in Sources */,
 				911C7764262CDB690096F2BE /* InfoView.swift in Sources */,
 				9183046A262B85AC009733FC /* CovidTrackerFranceApp.swift in Sources */,
 			);

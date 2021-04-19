@@ -14,20 +14,20 @@ struct InfoView: View {
         ZStack {
             Color.blue.ignoresSafeArea()
         VStack(alignment: .center) {
-            Image(systemName: "questionmark.circle").font(.system(size: 100))
+            Image(systemName: "questionmark.circle").font(.system(size: 50))
             Spacer().frame(height: 30)
-            Text("Where does the data come from?").bold().font(.title2)
+            Text("D'où proviennent les données?").bold().font(.title3)
             Spacer().frame(height: 10)
             
-        Text("Data shown are official data provided by French").font(.body)
-            HStack {
-            Text("government,")
-                Link("accesible here.", destination: URL(string: "https://dashboard.covid19.data.gouv.fr/vue-d-ensemble?location=FRA")!).font(.body).foregroundColor(.orange)
+            VStack(alignment: .leading) {
+        Text("Les données présentées sont des données officielles fournies par le gouvernement français.").font(.body)
+                Spacer().frame(height : 5)
+           
             }
             
         }.foregroundColor(.white).padding()
         }.navigationBarTitle("Infos").navigationBarItems(trailing: Button(action: { isPresented.toggle() }, label: {
-            Image(systemName: "xmark").foregroundColor(.white)
+            Image(systemName: "xmark").foregroundColor(.eerie)
         }))
         }
     }

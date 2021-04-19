@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var showLastUpdate = false
-    @State var stats: Stats
+    @State var stats: Stats?
     @State private var isShowing = false
     
     var body: some View {
@@ -18,7 +18,7 @@ struct ContentView: View {
         NavigationView {
             
             ZStack {
-                AngularGradient(gradient: Gradient(colors: [Color.blue, Color.red]), center: .center ).edgesIgnoringSafeArea(.all)
+                
                 VStack {
                     VStack {
                         
@@ -29,7 +29,7 @@ struct ContentView: View {
                     
                     
                 }
-            }.navigationBarTitle("Dashboard ").navigationBarItems(leading: Button(action: { isShowing.toggle()}, label: {
+            }.navigationBarTitle("Stats du jour ").navigationBarItems(leading: Button(action: { isShowing.toggle()}, label: {
                 Image(systemName: "info.circle").foregroundColor(.eerie)
             }), trailing:
                 Button(action: { loadData(); showLastUpdate = true }, label: {
@@ -57,7 +57,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         
-        ContentView(stats: dataExample)
+        ContentView(stats: dataExample).preferredColorScheme(.light)
     }
     
 }

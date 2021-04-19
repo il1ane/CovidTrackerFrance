@@ -20,4 +20,4 @@ struct Stats : Decodable {
     public var lastUpdatedAtSource:String
 }
 
-let dataExample = Stats(infected: 0, recoverd: 0, hospitalDeceased: 0, hospitalized: 0, newlyHospitalized: 0, intensiveCare: 0, sourceUrl: "", lastUpdatedAtApify: "", readMe: "", lastUpdatedAtSource: "")
+let dataExample = Stats(infected: 0, recoverd: 0, hospitalDeceased: 0, hospitalized: 0, newlyHospitalized: 0, intensiveCare: 0, sourceUrl: "-", lastUpdatedAtApify: "-", readMe: "-", lastUpdatedAtSource: "-")

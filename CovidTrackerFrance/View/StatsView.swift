@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct StatsView: View {
-    @Binding var stats: Stats
+    @Binding var stats: Stats?
     @Binding var animate: Bool
     
     
@@ -18,17 +18,22 @@ struct StatsView: View {
         
             VStack {
                 
-                HStack {
-                    
-                    Spacer()
-                    VStack {
-                        Text("Infected")
-                        Spacer().frame(height : 10)
-                        Text("\(stats.infected)").foregroundColor(.purple).bold().animation(animate ? .easeIn : .none)
-                    }.frame(minWidth: 0, idealWidth: 100, maxWidth: 300, minHeight: 0, idealHeight: 100, maxHeight: 100, alignment: .center)
-                    
-                    Spacer()
-                }.padding().background(Color.eerie).clipShape(RoundedRectangle(cornerRadius: 22)).foregroundColor(.white)
+                NavigationLink(
+                    destination: ConfirmedDetailView(),
+                    label: {
+                        HStack {
+                            
+                            Spacer()
+                            VStack {
+                                Text("Cas confirmés")
+                                Spacer().frame(height : 10)
+                                Text("\(stats?.infected ?? dataExample.infected)").foregroundColor(.purple).bold().animation(animate ? .easeIn : .none)
+                            }.frame(minWidth: 0, idealWidth: 100, maxWidth: 300, minHeight: 0, idealHeight: 100, maxHeight: 100, alignment: .center)
+                            
+                            Spacer()
+                        }.padding().background(Color.eerie).clipShape(RoundedRectangle(cornerRadius: 22)).foregroundColor(.white)
+                    })
+                
                 
                 HStack {
                     
@@ -37,15 +42,15 @@ struct StatsView: View {
                         Spacer()
                         VStack(alignment: .center) {
                             
-                            Text("Hospitalized")
+                            Text("Patients hospitalisés")
                            
                             Spacer().frame(height : 10)
                             HStack {
-                            Text("\(stats.hospitalized)").foregroundColor(.blue).bold().animation(animate ? .easeIn : .none)
+                                Text("\(stats?.hospitalized ?? dataExample.hospitalized)").foregroundColor(.blue).bold().animation(animate ? .easeIn : .none)
                                 
                             }
                             
-                        }.padding()
+                        }.frame(minWidth: 0, idealWidth: 100, maxWidth: 300, minHeight: 0, idealHeight: 100, maxHeight: 100, alignment: .center)
                         
                         Spacer()
                     }.padding().background(Color.eerie).clipShape(RoundedRectangle(cornerRadius: 22)).foregroundColor(.white)
@@ -54,11 +59,11 @@ struct StatsView: View {
                     HStack {
                         
                         VStack {
-                            Text("Intensive Care")
+                            Text("Patients en réanimation")
                             Spacer().frame(height : 10)
-                            Text("\(stats.intensiveCare)").foregroundColor(.orange).bold().animation(animate ? .easeIn : .none)
+                            Text("\(stats?.intensiveCare ?? dataExample.intensiveCare)").foregroundColor(.orange).bold().animation(animate ? .easeIn : .none)
                             
-                        }.padding()
+                        }.frame(minWidth: 0, idealWidth: 100, maxWidth: 300, minHeight: 0, idealHeight: 100, maxHeight: 100, alignment: .center)
                         
                         
                     }.padding().background(Color.eerie).clipShape(RoundedRectangle(cornerRadius: 22)).foregroundColor(.white)
@@ -72,11 +77,11 @@ struct StatsView: View {
                     HStack {
                         
                         VStack {
-                            Text("Hospital Deceased")
+                            Text("Décès à l’hôpital")
                             Spacer().frame(height : 10)
-                            Text("\(stats.hospitalDeceased)").foregroundColor(.red).bold().animation(animate ? .easeIn : .none)
+                            Text("\(stats?.hospitalDeceased ?? dataExample.hospitalDeceased)").foregroundColor(.red).bold().animation(animate ? .easeIn : .none)
                             
-                        }.padding()
+                        }.frame(minWidth: 0, idealWidth: 100, maxWidth: 300, minHeight: 0, idealHeight: 100, maxHeight: 100, alignment: .center)
                         
                         
                     }.padding().background(Color.eerie).clipShape(RoundedRectangle(cornerRadius: 22)).foregroundColor(.white)
@@ -84,23 +89,23 @@ struct StatsView: View {
                     HStack {
                         Spacer()
                         VStack {
-                            Text("Recovered")
+                            Text("Retours à domicile")
                             Spacer().frame(height : 10)
-                            Text("\(stats.recoverd )").foregroundColor(.green).bold().animation(animate ? .easeIn : .none)
-                        }.padding()
+                            Text("\(stats?.recoverd ?? dataExample.recoverd )").foregroundColor(.green).bold().animation(animate ? .easeIn : .none)
+                        }.frame(minWidth: 0, idealWidth: 100, maxWidth: 300, minHeight: 0, idealHeight: 100, maxHeight: 100, alignment: .center)
                         
                         Spacer()
-                }.padding(26).background(Color.eerie).clipShape(RoundedRectangle(cornerRadius: 22)).foregroundColor(.white)
+                }.padding().background(Color.eerie).clipShape(RoundedRectangle(cornerRadius: 22)).foregroundColor(.white)
                 }
-                if animate {
+               
                     
-                    VStack {
-                Text("Last API update : \(stats.lastUpdatedAtSource)").foregroundColor(.eerie)
-                    }.animation(animate ? .easeIn : .none)
+                VStack(alignment : .center) {
+                        Spacer()
+                        Text("Dernière mise à jour de l'API :\n \(stats?.lastUpdatedAtSource ?? dataExample.lastUpdatedAtSource)").foregroundColor(.eerie)
+                    }.animation(animate ? .easeIn : .easeIn)
                     
-                } else {
-                    Text("Datas needs to be refreshed!")
-                }
+                
+                
                 Spacer()
             }.padding()
             
