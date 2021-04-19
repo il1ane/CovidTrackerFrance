@@ -10,11 +10,9 @@ import SwiftUI
 struct HomeView: View {
     
     @State private var showLastUpdate = false
-    @State var stats: Stats?
+    @State var stats: Stats
     @State private var isShowing = false
-//    @Environment(\.managedObjectContext) var context
     @Environment(\.colorScheme) var colorScheme
-//    @StateObject var statsModel = StatsViewModel()
     
     var body: some View {
         
@@ -39,7 +37,9 @@ struct HomeView: View {
                 Image(systemName: "arrow.clockwise")
                 }))
             
-        }.accentColor(.red).sheet(isPresented: $isShowing, content: {
+        }.onAppear(perform: {
+            fetchData()
+        }).accentColor(.red).sheet(isPresented: $isShowing, content: {
             InfoView(isPresented: $isShowing).environment(\.colorScheme, colorScheme).accentColor(.red)
         })
     }
@@ -49,7 +49,7 @@ struct HomeView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         
-        HomeView(stats: DatasShown.datas)
+        HomeView(stats: DataSet.datas)
     }
     
 }

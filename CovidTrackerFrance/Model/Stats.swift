@@ -22,6 +22,6 @@ struct Stats : Codable {
     
 }
 
-struct DatasShown {
+struct DataSet {
     static var datas = Stats(infected: 0, recoverd: 0, hospitalDeceased: 0, hospitalized: 0, newlyHospitalized: 0, intensiveCare: 0, sourceUrl: "-", lastUpdatedAtApify: "-", readMe: "-", lastUpdatedAtSource: "-")
 }

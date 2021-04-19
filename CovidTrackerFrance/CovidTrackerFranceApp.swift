@@ -13,9 +13,7 @@ struct CovidTrackerFranceApp: App {
     let persistenceController = PersistenceController.shared
     var body: some Scene {
         WindowGroup {
-            HomeView(stats: DatasShown.datas).environment(\.managedObjectContext, persistenceController.container.viewContext)
-        }.onChange(of: scenePhase) { _ in
-            persistenceController.save()
+            HomeView(stats: DataSet.datas)
         }
     }
 }
