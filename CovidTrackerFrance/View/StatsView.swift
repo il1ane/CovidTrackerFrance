@@ -101,7 +101,7 @@ struct StatsView: View {
                     
                 VStack(alignment : .center) {
                         Spacer()
-                        Text("Dernière mise à jour de l'API :\n \(stats?.lastUpdatedAtSource ?? dataExample.lastUpdatedAtSource)").foregroundColor(.eerie)
+                        Text("Dernière mise à jour de l'API :\n \(stats?.lastUpdatedAtSource ?? dataExample.lastUpdatedAtSource)")
                     }
                     
                 
