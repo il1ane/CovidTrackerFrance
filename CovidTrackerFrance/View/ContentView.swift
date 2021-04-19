@@ -49,6 +49,7 @@ struct ContentView: View {
             if let decodedData = try? JSONDecoder().decode(Stats.self, from: data) {
                 DispatchQueue.main.async {
                     self.stats = decodedData
+                    DatasShown.datas = decodedData
                 }
             }
         }.resume()
@@ -58,7 +59,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         
-        ContentView(stats: dataExample)
+        ContentView(stats: DatasShown.datas)
     }
     
 }

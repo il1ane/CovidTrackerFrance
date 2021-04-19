@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct CovidTrackerFranceApp: App {
+    @Environment(\.scenePhase) var scenePhase
+    let persistenceController = PersistenceController.shared
     var body: some Scene {
         WindowGroup {
-            ContentView(stats: dataExample)
+            ContentView(stats: DatasShown.datas).environment(\.managedObjectContext, persistenceController.container.viewContext)
+        }.onChange(of: scenePhase) { _ in
+            persistenceController.save()
         }
     }
 }

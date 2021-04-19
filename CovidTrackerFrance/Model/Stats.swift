@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Stats : Decodable {
+struct Stats : Codable {
     public var infected:Int
     public var recoverd:Int
     public var hospitalDeceased:Int
@@ -18,6 +18,9 @@ struct Stats : Decodable {
     public var lastUpdatedAtApify:String
     public var readMe:String
     public var lastUpdatedAtSource:String
+
 }
 
-let dataExample = Stats(infected: 0, recoverd: 0, hospitalDeceased: 0, hospitalized: 0, newlyHospitalized: 0, intensiveCare: 0, sourceUrl: "-", lastUpdatedAtApify: "-", readMe: "-", lastUpdatedAtSource: "-")
+struct DatasShown {
+    static var datas = Stats(infected: 0, recoverd: 0, hospitalDeceased: 0, hospitalized: 0, newlyHospitalized: 0, intensiveCare: 0, sourceUrl: "-", lastUpdatedAtApify: "-", readMe: "-", lastUpdatedAtSource: "-")
+}

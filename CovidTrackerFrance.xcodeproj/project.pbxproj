@@ -16,6 +16,11 @@
 		9183047C262B85F6009733FC /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9183047B262B85F6009733FC /* Stats.swift */; };
 		91E3AB43262D06B500F416BF /* ConfirmedDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E3AB42262D06B500F416BF /* ConfirmedDetailView.swift */; };
 		91E5227D262C49BD00630D6B /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E5227C262C49BD00630D6B /* StatsView.swift */; };
+		91F503DF262D86D400190809 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F503DE262D86D400190809 /* Data.swift */; };
+		91F50404262D8B9300190809 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 91F50402262D8B9300190809 /* Model.xcdatamodeld */; };
+		91F50407262D8CE200190809 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F50406262D8CE200190809 /* PersistenceController.swift */; };
+		91F5040A262D8DB600190809 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F50409262D8DB600190809 /* Item+CoreDataClass.swift */; };
+		91F50410262D8E0A00190809 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5040F262D8E0A00190809 /* Item+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +35,11 @@
 		9183047B262B85F6009733FC /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
 		91E3AB42262D06B500F416BF /* ConfirmedDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmedDetailView.swift; sourceTree = "<group>"; };
 		91E5227C262C49BD00630D6B /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		91F503DE262D86D400190809 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		91F50403262D8B9300190809 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		91F50406262D8CE200190809 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		91F50409262D8DB600190809 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
+		91F5040F262D8E0A00190809 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +94,12 @@
 		91830479262B85C3009733FC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				91F50402262D8B9300190809 /* Model.xcdatamodeld */,
 				9183047B262B85F6009733FC /* Stats.swift */,
+				91F50406262D8CE200190809 /* PersistenceController.swift */,
+				91F50409262D8DB600190809 /* Item+CoreDataClass.swift */,
+				91F5040F262D8E0A00190809 /* Item+CoreDataProperties.swift */,
+				91F503DE262D86D400190809 /* Data.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -170,11 +185,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91F50407262D8CE200190809 /* PersistenceController.swift in Sources */,
+				91F503DF262D86D400190809 /* Data.swift in Sources */,
 				91E5227D262C49BD00630D6B /* StatsView.swift in Sources */,
 				9183046C262B85AC009733FC /* ContentView.swift in Sources */,
+				91F50404262D8B9300190809 /* Model.xcdatamodeld in Sources */,
+				91F5040A262D8DB600190809 /* Item+CoreDataClass.swift in Sources */,
 				9183047C262B85F6009733FC /* Stats.swift in Sources */,
 				91E3AB43262D06B500F416BF /* ConfirmedDetailView.swift in Sources */,
 				911C7764262CDB690096F2BE /* InfoView.swift in Sources */,
+				91F50410262D8E0A00190809 /* Item+CoreDataProperties.swift in Sources */,
 				9183046A262B85AC009733FC /* CovidTrackerFranceApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,6 +384,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		91F50402262D8B9300190809 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				91F50403262D8B9300190809 /* Model.xcdatamodel */,
+			);
+			currentVersion = 91F50403262D8B9300190809 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9183045E262B85AB009733FC /* Project object */;
 }
