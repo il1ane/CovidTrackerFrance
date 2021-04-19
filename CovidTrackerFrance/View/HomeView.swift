@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeView: View {
     
     @State private var showLastUpdate = false
-    @State var stats: StatsModel?
+    @State var stats: Stats?
     @State private var isShowing = false
 //    @Environment(\.managedObjectContext) var context
     @Environment(\.colorScheme) var colorScheme
@@ -61,7 +61,7 @@ extension HomeView {
         URLSession.shared.dataTask(with: url) { data, error, response in
             guard let data = data else { return }
             
-            if let decodedData = try? JSONDecoder().decode(StatsModel.self, from: data) {
+            if let decodedData = try? JSONDecoder().decode(Stats.self, from: data) {
                 DispatchQueue.main.async {
                     self.stats = decodedData
                     

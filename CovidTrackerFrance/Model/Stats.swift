@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-struct StatsModel : Codable {
+struct Stats : Codable {
     public var infected:Int
     public var recoverd:Int
     public var hospitalDeceased:Int
@@ -23,5 +23,5 @@ struct StatsModel : Codable {
 }
 
 struct DatasShown {
-    static var datas = StatsModel(infected: 0, recoverd: 0, hospitalDeceased: 0, hospitalized: 0, newlyHospitalized: 0, intensiveCare: 0, sourceUrl: "-", lastUpdatedAtApify: "-", readMe: "-", lastUpdatedAtSource: "-")
+    static var datas = Stats(infected: 0, recoverd: 0, hospitalDeceased: 0, hospitalized: 0, newlyHospitalized: 0, intensiveCare: 0, sourceUrl: "-", lastUpdatedAtApify: "-", readMe: "-", lastUpdatedAtSource: "-")
 }

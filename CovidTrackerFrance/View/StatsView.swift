@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct StatsView: View {
-    @Binding var stats: StatsModel?
+    @Binding var stats: Stats?
     @Binding var animate: Bool
     
     
