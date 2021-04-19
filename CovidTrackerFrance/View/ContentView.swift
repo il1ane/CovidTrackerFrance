@@ -12,6 +12,7 @@ struct ContentView: View {
     @State private var showLastUpdate = false
     @State var stats: Stats?
     @State private var isShowing = false
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         
@@ -30,13 +31,13 @@ struct ContentView: View {
                     
                 }
             }.navigationBarTitle("Stats du jour ").navigationBarItems(leading: Button(action: { isShowing.toggle()}, label: {
-                Image(systemName: "info.circle").foregroundColor(.eerie)
+                Image(systemName: "info.circle")
             }), trailing:
                 Button(action: { loadData(); showLastUpdate = true }, label: {
-                Image(systemName: "arrow.clockwise").foregroundColor(.eerie)
-  }))
-        }.sheet(isPresented: $isShowing, content: {
-            InfoView(isPresented: $isShowing)
+                Image(systemName: "arrow.clockwise")
+                }))
+        }.accentColor(.red).sheet(isPresented: $isShowing, content: {
+            InfoView(isPresented: $isShowing).environment(\.colorScheme, colorScheme).accentColor(.red)
         })
     }
     
@@ -57,7 +58,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         
-        ContentView(stats: dataExample).preferredColorScheme(.light)
+        ContentView(stats: dataExample)
     }
     
 }
