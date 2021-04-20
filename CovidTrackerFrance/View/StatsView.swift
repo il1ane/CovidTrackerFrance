@@ -9,9 +9,8 @@ import SwiftUI
 
 struct StatsView: View {
     
-    @Binding var stats: Stats
     @Binding var animate: Bool
-    
+    @ObservedObject var stats = StatsViewModel()
     
     var body: some View {
         
@@ -28,7 +27,7 @@ struct StatsView: View {
                             VStack {
                                 Text("Cas confirmés")
                                 Spacer().frame(height : 10)
-                                Text("\(stats.infected )").foregroundColor(.purple).bold().animation(animate ? .easeIn : .none)
+                                Text("\(stats.stats?.infected ?? DataSet.datas.infected )").foregroundColor(.purple).bold().animation(animate ? .easeIn : .none)
                             }.frame(minWidth: 0, idealWidth: 100, maxWidth: 300, minHeight: 0, idealHeight: 100, maxHeight: 100, alignment: .center)
                             
                             Spacer()
@@ -47,7 +46,7 @@ struct StatsView: View {
                            
                             Spacer().frame(height : 10)
                             HStack {
-                                Text("\(stats.hospitalized )").foregroundColor(.blue).bold().animation(animate ? .easeIn : .none)
+                                Text("\(stats.stats?.hospitalized ?? DataSet.datas.hospitalized )").foregroundColor(.blue).bold().animation(animate ? .easeIn : .none)
                                 
                             }
                             
@@ -62,7 +61,7 @@ struct StatsView: View {
                         VStack {
                             Text("Patients en réanimation")
                             Spacer().frame(height : 10)
-                            Text("\(stats.intensiveCare)").foregroundColor(.orange).bold().animation(animate ? .easeIn : .none)
+                            Text("\(stats.stats?.intensiveCare ?? DataSet.datas.intensiveCare)").foregroundColor(.orange).bold().animation(animate ? .easeIn : .none)
                             
                         }.frame(minWidth: 0, idealWidth: 100, maxWidth: 300, minHeight: 0, idealHeight: 100, maxHeight: 100, alignment: .center)
                         
@@ -80,7 +79,7 @@ struct StatsView: View {
                         VStack {
                             Text("Décès à l’hôpital")
                             Spacer().frame(height : 10)
-                            Text("\(stats.hospitalDeceased )").foregroundColor(.red).bold().animation(animate ? .easeIn : .none)
+                            Text("\(stats.stats?.hospitalDeceased ?? DataSet.datas.hospitalDeceased )").foregroundColor(.red).bold().animation(animate ? .easeIn : .none)
                             
                         }.frame(minWidth: 0, idealWidth: 100, maxWidth: 300, minHeight: 0, idealHeight: 100, maxHeight: 100, alignment: .center)
                         
@@ -92,7 +91,7 @@ struct StatsView: View {
                         VStack {
                             Text("Retours à domicile")
                             Spacer().frame(height : 10)
-                            Text("\(stats.recoverd )").foregroundColor(.green).bold().animation(animate ? .easeIn : .none)
+                            Text("\(stats.stats?.recoverd ?? DataSet.datas.recoverd)").foregroundColor(.green).bold().animation(animate ? .easeIn : .none)
                         }.frame(minWidth: 0, idealWidth: 100, maxWidth: 300, minHeight: 0, idealHeight: 100, maxHeight: 100, alignment: .center)
                         
                         Spacer()
@@ -102,10 +101,10 @@ struct StatsView: View {
                     
                 VStack(alignment : .center) {
                         Spacer()
-                    Text("Dernière mise à jour de l'API :\n \(stats.lastUpdatedAtSource )")
+                    Text("Dernière mise à jour de l'API :\n \(stats.stats?.lastUpdatedAtSource ?? DataSet.datas.lastUpdatedAtSource )")
                     }
                     
-                
+                Text(StatsViewModel().stats?.sourceUrl ?? DataSet.datas.sourceUrl)
                 
                 Spacer()
             }.padding()
@@ -116,6 +115,6 @@ struct StatsView: View {
 
 struct StatsView_Previews: PreviewProvider {
     static var previews: some View {
-        StatsView(stats: .constant(DataSet.datas), animate: .constant(true))
+        StatsView(animate: .constant(true))
     }
 }

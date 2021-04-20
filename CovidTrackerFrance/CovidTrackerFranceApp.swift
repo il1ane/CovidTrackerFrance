@@ -13,7 +13,7 @@ struct CovidTrackerFranceApp: App {
     let persistenceController = PersistenceController.shared
     var body: some Scene {
         WindowGroup {
-            HomeView(stats: DataSet.datas)
+            HomeView()
         }
     }
 }

@@ -10,8 +10,8 @@ import SwiftUI
 struct HomeView: View {
     
     @State private var showLastUpdate = false
-    @State var stats: Stats
     @State private var isShowing = false
+    @ObservedObject var stats = StatsViewModel()
     @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
@@ -23,7 +23,7 @@ struct HomeView: View {
                 VStack {
                     VStack {
                         
-                        StatsView(stats: $stats, animate: $showLastUpdate)
+                        StatsView(animate: $showLastUpdate)
                         
                         Spacer()
                     }
@@ -33,12 +33,12 @@ struct HomeView: View {
             }.navigationBarTitle("Stats du jour ").navigationBarItems(leading: Button(action: { isShowing.toggle()}, label: {
                 Image(systemName: "info.circle")
             }), trailing:
-                Button(action: { fetchData() ;showLastUpdate = true }, label: {
+                Button(action: { stats.fetchData() ;showLastUpdate = true }, label: {
                 Image(systemName: "arrow.clockwise")
                 }))
             
         }.onAppear(perform: {
-            fetchData()
+            stats.fetchData()
         }).accentColor(.red).sheet(isPresented: $isShowing, content: {
             InfoView(isPresented: $isShowing).environment(\.colorScheme, colorScheme).accentColor(.red)
         })
@@ -48,29 +48,13 @@ struct HomeView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
+
+        HomeView()
         
-        HomeView(stats: DataSet.datas)
     }
-    
 }
 
-extension HomeView {
-    
-    func fetchData() {
-        guard let url = URL(string: "https://api.apify.com/v2/key-value-stores/ufVgKLP8ljtn3ufaU/records/LATEST?disableRedirect=true") else { return }
-        URLSession.shared.dataTask(with: url) { data, error, response in
-            guard let data = data else { return }
-            
-            if let decodedData = try? JSONDecoder().decode(Stats.self, from: data) {
-                DispatchQueue.main.async {
-                    self.stats = decodedData
-                    
-                }
-            }
-        }.resume()
-    }
 
-}
 extension Color {
     public static var eerie = Color("Eerie")
 }
