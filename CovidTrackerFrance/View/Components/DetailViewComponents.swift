@@ -12,7 +12,7 @@ struct RectangleStyle: ViewModifier {
         content
             
             
-             .padding().frame(minHeight: 120).background(Color.eerie).clipShape(RoundedRectangle(cornerRadius: 22)).foregroundColor(.white)
+            .padding().frame(minWidth: 145, minHeight: 145).background(Color.eerie).clipShape(RoundedRectangle(cornerRadius: 22)).foregroundColor(.white)
     }
 }
 
@@ -28,18 +28,25 @@ struct DetailViewStyle:View {
     var title:String
     var text:String
     var color:Color
-    var data:Int32
+    var data:Int
     var body: some View {
         
             
-        VStack(alignment: .leading) {
+        VStack(alignment: .center) {
+            
             Text("\(data)").font(.title).bold().foregroundColor(color)
         HStack {
+            
             Spacer()
+            
             VStack(alignment: .center) {
+                Image(systemName: "info.circle").font(.system(size: 33))
+                Divider()
+                Spacer().frame(height : 10)
         Text(text)
             }
             Spacer()
+            
         }
         .rectangleStyle()
             Spacer()

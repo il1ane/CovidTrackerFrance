@@ -12,6 +12,10 @@
 		9162404126305A8D003910EA /* DetailViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9162404026305A8D003910EA /* DetailViewComponents.swift */; };
 		9162404826305F96003910EA /* StatsViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9162404726305F96003910EA /* StatsViewComponents.swift */; };
 		91644DCA262C5831008AA17E /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 91644DC9262C5831008AA17E /* .gitignore */; };
+		917233112630B4AF007C1029 /* Vaccine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917233102630B4AF007C1029 /* Vaccine.swift */; };
+		917233142630B5FE007C1029 /* VaccineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917233132630B5FE007C1029 /* VaccineView.swift */; };
+		917233182630B674007C1029 /* VaccineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917233172630B674007C1029 /* VaccineViewModel.swift */; };
+		917233202630BAA0007C1029 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9172331F2630BAA0007C1029 /* MainView.swift */; };
 		9183046A262B85AC009733FC /* CovidTrackerFranceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91830469262B85AC009733FC /* CovidTrackerFranceApp.swift */; };
 		9183046C262B85AC009733FC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9183046B262B85AC009733FC /* HomeView.swift */; };
 		9183046E262B85AD009733FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9183046D262B85AD009733FC /* Assets.xcassets */; };
@@ -26,6 +30,10 @@
 		9162404026305A8D003910EA /* DetailViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewComponents.swift; sourceTree = "<group>"; };
 		9162404726305F96003910EA /* StatsViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewComponents.swift; sourceTree = "<group>"; };
 		91644DC9262C5831008AA17E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		917233102630B4AF007C1029 /* Vaccine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vaccine.swift; sourceTree = "<group>"; };
+		917233132630B5FE007C1029 /* VaccineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineView.swift; sourceTree = "<group>"; };
+		917233172630B674007C1029 /* VaccineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineViewModel.swift; sourceTree = "<group>"; };
+		9172331F2630BAA0007C1029 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		91830466262B85AC009733FC /* CovidTrackerFrance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CovidTrackerFrance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91830469262B85AC009733FC /* CovidTrackerFranceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidTrackerFranceApp.swift; sourceTree = "<group>"; };
 		9183046B262B85AC009733FC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -51,22 +59,16 @@
 			isa = PBXGroup;
 			children = (
 				9113EB82262F0BCB00EE410A /* StatsViewModel.swift */,
+				917233172630B674007C1029 /* VaccineViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		9162404C263068E9003910EA /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				9162404026305A8D003910EA /* DetailViewComponents.swift */,
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		9162404D263068EF003910EA /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				9162404726305F96003910EA /* StatsViewComponents.swift */,
+				9162404026305A8D003910EA /* DetailViewComponents.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -94,7 +96,6 @@
 				91644DC9262C5831008AA17E /* .gitignore */,
 				9113EB81262F0BB200EE410A /* ViewModel */,
 				9183047A262B85D1009733FC /* View */,
-				91830479262B85C3009733FC /* Model */,
 				9183046D262B85AD009733FC /* Assets.xcassets */,
 				91830472262B85AD009733FC /* Info.plist */,
 				9183046F262B85AD009733FC /* Preview Content */,
@@ -113,6 +114,7 @@
 		91830479262B85C3009733FC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				917233102630B4AF007C1029 /* Vaccine.swift */,
 				9183047B262B85F6009733FC /* Stats.swift */,
 			);
 			path = Model;
@@ -123,19 +125,13 @@
 			children = (
 				9162404D263068EF003910EA /* Components */,
 				9183046B262B85AC009733FC /* HomeView.swift */,
-				911C7763262CDB690096F2BE /* InfoView.swift */,
+				917233132630B5FE007C1029 /* VaccineView.swift */,
 				91E5227C262C49BD00630D6B /* StatsView.swift */,
-				91DC17AB263058ED0062AC5F /* DetailView */,
+				9172331F2630BAA0007C1029 /* MainView.swift */,
+				911C7763262CDB690096F2BE /* InfoView.swift */,
+				91830479262B85C3009733FC /* Model */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		91DC17AB263058ED0062AC5F /* DetailView */ = {
-			isa = PBXGroup;
-			children = (
-				9162404C263068E9003910EA /* Components */,
-			);
-			path = DetailView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,12 +204,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				917233112630B4AF007C1029 /* Vaccine.swift in Sources */,
+				917233202630BAA0007C1029 /* MainView.swift in Sources */,
 				91E5227D262C49BD00630D6B /* StatsView.swift in Sources */,
 				9183046C262B85AC009733FC /* HomeView.swift in Sources */,
 				9113EB83262F0BCB00EE410A /* StatsViewModel.swift in Sources */,
 				9183047C262B85F6009733FC /* Stats.swift in Sources */,
 				9162404126305A8D003910EA /* DetailViewComponents.swift in Sources */,
+				917233142630B5FE007C1029 /* VaccineView.swift in Sources */,
 				9162404826305F96003910EA /* StatsViewComponents.swift in Sources */,
+				917233182630B674007C1029 /* VaccineViewModel.swift in Sources */,
 				911C7764262CDB690096F2BE /* InfoView.swift in Sources */,
 				9183046A262B85AC009733FC /* CovidTrackerFranceApp.swift in Sources */,
 			);

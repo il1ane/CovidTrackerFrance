@@ -9,12 +9,12 @@ import Foundation
 import CoreData
 
 struct Stats : Codable, Hashable {
-    public var infected:Int32
-    public var recoverd:Int32
-    public var hospitalDeceased:Int32
-    public var hospitalized: Int32
-    public var newlyHospitalized:Int32
-    public var intensiveCare:Int32
+    public var infected:Int
+    public var recoverd:Int
+    public var hospitalDeceased:Int
+    public var hospitalized: Int
+    public var newlyHospitalized:Int
+    public var intensiveCare:Int
     public var sourceUrl:String
     public var lastUpdatedAtApify:String
     public var readMe:String

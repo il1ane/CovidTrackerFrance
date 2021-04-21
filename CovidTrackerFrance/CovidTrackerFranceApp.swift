@@ -14,7 +14,7 @@ struct CovidTrackerFranceApp: App {
     
     var body: some Scene {
         WindowGroup {
-            HomeView().preferredColorScheme(.dark)
+            MainView().preferredColorScheme(.dark)
         }
     }
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct StatsViewComponents: View {
     
-    var data:Int32
+    var data:Int
     var dataTitle:String
     var color:Color
     
