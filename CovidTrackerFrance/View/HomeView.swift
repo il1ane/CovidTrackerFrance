@@ -16,20 +16,26 @@ struct HomeView: View {
     
     var body: some View {
         
+        
+        
         NavigationView {
             
-            ZStack {
-                
+                            
+            ScrollView {
                 VStack {
+                    
+                    
                     VStack {
+                        
+                        
                         
                         StatsView(animate: $showLastUpdate)
                         
                         Spacer()
                     }
-                    
-                    
                 }
+                    
+                
             }.navigationBarTitle("Stats du jour ").navigationBarItems(leading: Button(action: { isShowing.toggle()}, label: {
                 Image(systemName: "info.circle")
             }), trailing:
@@ -40,12 +46,13 @@ struct HomeView: View {
             
         }.onAppear(perform: {
            
-            showLastUpdate.toggle()
             
-        }).accentColor(.red).sheet(isPresented: $isShowing, content: {
-            InfoView(isPresented: $isShowing).environment(\.colorScheme, colorScheme).accentColor(.red)
+            
+        }).accentColor(.blue).sheet(isPresented: $isShowing, content: {
+            InfoView(isPresented: $isShowing).environment(\.colorScheme, colorScheme).accentColor(.blue)
         })
     }
+    
     
 }
 

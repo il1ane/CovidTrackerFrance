@@ -10,7 +10,7 @@ import Foundation
 class StatsViewModel: ObservableObject {
     
     @Published var stats: Stats?
-    
+   
 //    func saveData(context: NSManagedObjectContext) {
 //
 //
@@ -39,6 +39,7 @@ class StatsViewModel: ObservableObject {
 //        }
 //
 //    }
+
     
     func fetchData() {
         guard let url = URL(string: "https://api.apify.com/v2/key-value-stores/ufVgKLP8ljtn3ufaU/records/LATEST?disableRedirect=true") else { return }
@@ -49,6 +50,7 @@ class StatsViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     
                     self.stats = decodedData
+                    print("today stats loaded")
             
                 }
             }

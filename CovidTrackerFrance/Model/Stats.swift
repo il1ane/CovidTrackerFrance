@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-struct Stats : Codable {
+struct Stats : Codable, Hashable {
     public var infected:Int32
     public var recoverd:Int32
     public var hospitalDeceased:Int32
@@ -19,7 +19,6 @@ struct Stats : Codable {
     public var lastUpdatedAtApify:String
     public var readMe:String
     public var lastUpdatedAtSource:String
-    
 }
 
 struct DataSet {

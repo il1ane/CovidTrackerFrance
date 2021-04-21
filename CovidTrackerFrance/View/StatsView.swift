@@ -10,101 +10,54 @@ import SwiftUI
 struct StatsView: View {
     
     @Binding var animate: Bool
-    @StateObject var stats = StatsViewModel()
+    @ObservedObject var stats = StatsViewModel()
     
     var body: some View {
         
-        
+//        .foregroundColor(.blue).bold().animation(animate ? .easeIn : .none)
             VStack {
                 
                 NavigationLink(
-                    destination: InfectedDetailView(),
+                    destination:         VStack {
+                        DetailViewStyle(title: "Cas confirmés", text: "Le nombre de cas confirmés inclut le nombre de cas confirmés par tests RT-PCR issus de la base de données SI-DEP et le nombre de cas confirmés par test antigénique issus de Contact Covid", color: .blue, data: stats.stats?.infected ?? DataSet.datas.infected).padding()
+                        
+                      
+                    }
+,
                     label: {
-                        HStack {
-                            
-                            Spacer()
-                            VStack {
-                                Text("Cas confirmés")
-                                Spacer().frame(height : 10)
-                                Text("\(stats.stats?.infected ?? DataSet.datas.infected )").foregroundColor(.purple).bold().animation(animate ? .easeIn : .none)
-                            }.frame(minWidth: 0, idealWidth: 100, maxWidth: 300, minHeight: 0, idealHeight: 100, maxHeight: 100, alignment: .center)
-                            
-                            Spacer()
-                        }.padding().background(Color.eerie).clipShape(RoundedRectangle(cornerRadius: 22)).foregroundColor(.white)
-                    })
-                
-                
+                        StatsViewComponents(data: stats.stats?.infected ?? DataSet.datas.infected, dataTitle: "Cas confirmés", color: .blue)
+                        })
                 HStack {
-                    
-                    
-                    HStack {
-                        Spacer()
-                        VStack(alignment: .center) {
-                            
-                            Text("Patients hospitalisés")
-                           
-                            Spacer().frame(height : 10)
-                            HStack {
-                                Text("\(stats.stats?.hospitalized ?? DataSet.datas.hospitalized )").foregroundColor(.blue).bold().animation(animate ? .easeIn : .none)
-                                
-                            }
-                            
-                        }.frame(minWidth: 0, idealWidth: 100, maxWidth: 300, minHeight: 0, idealHeight: 100, maxHeight: 100, alignment: .center)
-                        
-                        Spacer()
-                    }.padding().background(Color.eerie).clipShape(RoundedRectangle(cornerRadius: 22)).foregroundColor(.white)
-                    
-                    Spacer()
-                    HStack {
-                        
-                        VStack {
-                            Text("Patients en réanimation")
-                            Spacer().frame(height : 10)
-                            Text("\(stats.stats?.intensiveCare ?? DataSet.datas.intensiveCare)").foregroundColor(.orange).bold().animation(animate ? .easeIn : .none)
-                            
-                        }.frame(minWidth: 0, idealWidth: 100, maxWidth: 300, minHeight: 0, idealHeight: 100, maxHeight: 100, alignment: .center)
-                        
-                        
-                    }.padding().background(Color.eerie).clipShape(RoundedRectangle(cornerRadius: 22)).foregroundColor(.white)
+                NavigationLink(
+                    destination:  DetailViewStyle(title: "Hospitalisés", text: "Nombre de patients atteints de COVID-19 actuellement hospitalisés", color: .yellow, data: stats.stats?.hospitalized ?? DataSet.datas.hospitalized).padding(),
+                    label: {
+                        StatsViewComponents(data: stats.stats?.hospitalized ?? DataSet.datas.hospitalized, dataTitle: "Hospitalisés", color: .yellow)
+                        })
+                NavigationLink(
+                    destination:  DetailViewStyle(title: "Soins intensifs", text: "Nombre de patients atteints de COVID-19 actuellement en réanimation, en, soins intensifs, ou en unité de surveillance continue", color: .orange, data: stats.stats?.intensiveCare ?? DataSet.datas.intensiveCare).padding(),
+                    label: {
+                        StatsViewComponents(data: stats.stats?.intensiveCare ?? DataSet.datas.intensiveCare, dataTitle: "Soins intensifs", color: .orange)
+                        })
                 }
-                
-                
                 HStack {
-                    
-                    
-                    
-                    HStack {
-                        
-                        VStack {
-                            Text("Décès")
-                            Spacer().frame(height : 10)
-                            Text("\(stats.stats?.hospitalDeceased ?? DataSet.datas.hospitalDeceased )").foregroundColor(.red).bold().animation(animate ? .easeIn : .none)
-                            
-                        }.frame(minWidth: 0, idealWidth: 100, maxWidth: 300, minHeight: 0, idealHeight: 100, maxHeight: 100, alignment: .center)
-                        
-                        
-                    }.padding().background(Color.eerie).clipShape(RoundedRectangle(cornerRadius: 22)).foregroundColor(.white)
-                    Spacer()
-                    HStack {
-                        Spacer()
-                        VStack {
-                            Text("Retours à domicile")
-                            Spacer().frame(height : 10)
-                            Text("\(stats.stats?.recoverd ?? DataSet.datas.recoverd)").foregroundColor(.green).bold().animation(animate ? .easeIn : .none)
-                        }.frame(minWidth: 0, idealWidth: 100, maxWidth: 300, minHeight: 0, idealHeight: 100, maxHeight: 100, alignment: .center)
-                        
-                        Spacer()
-                }.padding().background(Color.eerie).clipShape(RoundedRectangle(cornerRadius: 22)).foregroundColor(.white)
+                NavigationLink(
+                    destination:    DetailViewStyle(title: "Décès", text: "Nombre de décès à l'hôpital",color: .red, data: stats.stats?.hospitalDeceased ?? DataSet.datas.hospitalDeceased).padding() ,
+                    label: {
+                        StatsViewComponents(data: stats.stats?.hospitalDeceased ?? DataSet.datas.hospitalDeceased, dataTitle: "Décès", color: .red)
+                        })
+                NavigationLink(
+                    destination: DetailViewStyle(title: "Retours", text: "Nombre cumulé de patients ayany été hospitalisés pour COVID-19 et de retour à domicile en raison de l'amélioration de leur état de santé", color: .green, data: stats.stats?.recoverd ?? DataSet.datas.recoverd).padding() ,
+                    label: {
+                        StatsViewComponents(data: stats.stats?.recoverd ?? DataSet.datas.recoverd, dataTitle: "Retours à domicile", color: .green)
+                        })
                 }
-               
-                    
+                Spacer()
+
                 VStack(alignment : .center) {
                         Spacer()
                     Text("Dernière mise à jour de l'API :\n \(stats.stats?.lastUpdatedAtSource ?? DataSet.datas.lastUpdatedAtSource )")
                     }
                     
-                
-                Spacer()
             }.padding().onAppear(perform: {
                stats.fetchData()
             })

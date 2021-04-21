@@ -12,7 +12,7 @@ struct RectangleStyle: ViewModifier {
         content
             
             
-            .padding().background(Color.eerie).clipShape(RoundedRectangle(cornerRadius: 22)).foregroundColor(.white).padding()
+             .padding().frame(minHeight: 120).background(Color.eerie).clipShape(RoundedRectangle(cornerRadius: 22)).foregroundColor(.white)
     }
 }
 
@@ -24,11 +24,16 @@ extension View {
 
 struct DetailViewStyle:View {
     
+   
+    var title:String
     var text:String
+    var color:Color
+    var data:Int32
     var body: some View {
-        ZStack {
+        
             
-        VStack {
+        VStack(alignment: .leading) {
+            Text("\(data)").font(.title).bold().foregroundColor(color)
         HStack {
             Spacer()
             VStack(alignment: .center) {
@@ -40,14 +45,15 @@ struct DetailViewStyle:View {
             Spacer()
         }
         
-        .navigationBarTitle("Cas confirmés")
-        }
+        .navigationBarTitle(title)
+        
     }
 }
 
 struct DetailViewStyle_Preview : PreviewProvider {
 
     static var previews: some View {
-        DetailViewStyle(text: "aaezaezzezaezeaeza")
+        DetailViewStyle(title: "Cas confirmés", text: "Le nombre de cas confirmés inclut le nombre de cas confirmés par tests RT-PCR issus de la base de données SI-DEP et le nombre de cas confirmés par test antigénique issus de Contact Covid", color: .red, data: 33)
+        
     }
 }
