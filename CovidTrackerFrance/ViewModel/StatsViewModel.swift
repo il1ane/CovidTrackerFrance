@@ -49,7 +49,7 @@ class StatsViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     
                     self.stats = decodedData
-//                    self.saveData(context: context)
+            
                 }
             }
         }.resume()

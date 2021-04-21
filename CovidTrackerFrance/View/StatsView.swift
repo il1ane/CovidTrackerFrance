@@ -18,7 +18,7 @@ struct StatsView: View {
             VStack {
                 
                 NavigationLink(
-                    destination: ConfirmedDetailView(),
+                    destination: InfectedDetailView(),
                     label: {
                         HStack {
                             
@@ -76,7 +76,7 @@ struct StatsView: View {
                     HStack {
                         
                         VStack {
-                            Text("Décès à l’hôpital")
+                            Text("Décès")
                             Spacer().frame(height : 10)
                             Text("\(stats.stats?.hospitalDeceased ?? DataSet.datas.hospitalDeceased )").foregroundColor(.red).bold().animation(animate ? .easeIn : .none)
                             
