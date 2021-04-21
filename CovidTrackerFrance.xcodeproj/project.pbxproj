@@ -41,6 +41,7 @@
 		91830470262B85AD009733FC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		91830472262B85AD009733FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9183047B262B85F6009733FC /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
+		91B2225E2630D52A00AF9D01 /* Todo.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Todo.md; sourceTree = "<group>"; };
 		91E5227C262C49BD00630D6B /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,6 +95,7 @@
 			children = (
 				91830469262B85AC009733FC /* CovidTrackerFranceApp.swift */,
 				91644DC9262C5831008AA17E /* .gitignore */,
+				91B2225E2630D52A00AF9D01 /* Todo.md */,
 				9113EB81262F0BB200EE410A /* ViewModel */,
 				9183047A262B85D1009733FC /* View */,
 				9183046D262B85AD009733FC /* Assets.xcassets */,

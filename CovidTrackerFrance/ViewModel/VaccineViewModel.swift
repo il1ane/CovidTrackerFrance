@@ -8,6 +8,7 @@
 import Foundation
 
 class VaccineViewModel: ObservableObject {
+    
     @Published var vaccines: Vaccine?
     
     func fetchVaccine() {

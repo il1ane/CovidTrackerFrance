@@ -32,7 +32,6 @@ struct HomeView: View {
                     }
                 }
                     
-                
             }.navigationBarTitle("Stats du jour ").navigationBarItems(trailing: Button(action: { isShowing.toggle()}, label: {
                 Image(systemName: "info.circle")
             }))
@@ -43,8 +42,6 @@ struct HomeView: View {
             InfoView(isPresented: $isShowing).environment(\.colorScheme, colorScheme).accentColor(.blue)
         })
     }
-    
-    
 }
 
 struct ContentView_Previews: PreviewProvider {

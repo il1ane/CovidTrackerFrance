@@ -10,7 +10,6 @@ import Foundation
 class StatsViewModel: ObservableObject {
     
     @Published var stats: Stats?
-   
     
     func fetchStats() {
         guard let url = URL(string: "https://api.apify.com/v2/key-value-stores/ufVgKLP8ljtn3ufaU/records/LATEST?disableRedirect=true") else { return }
