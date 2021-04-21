@@ -11,10 +11,10 @@ struct StatsView: View {
     
     @Binding var animate: Bool
     @StateObject var stats = StatsViewModel()
+    @Environment(\.managedObjectContext) var context
     
     var body: some View {
         
-            //TODO: adapt for smaller screen
         
             VStack {
                 
@@ -107,7 +107,7 @@ struct StatsView: View {
                 
                 Spacer()
             }.padding().onAppear(perform: {
-                stats.fetchData()
+               stats.fetchData()
             })
             
         

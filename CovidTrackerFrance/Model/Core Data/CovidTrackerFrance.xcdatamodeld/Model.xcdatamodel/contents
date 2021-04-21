@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20D91" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Covid" representedClassName="Covid" syncable="YES" codeGenerationType="class">
+    <entity name="Covid" representedClassName=".Covid" syncable="YES" codeGenerationType="class">
         <attribute name="hospitalDeceased" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="hospitalized" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="infected" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
@@ -13,6 +13,6 @@
         <attribute name="sourceUrl" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Covid" positionX="-63" positionY="-18" width="128" height="14"/>
+        <element name="Covid" positionX="-63" positionY="-18" width="128" height="179"/>
     </elements>
 </model>

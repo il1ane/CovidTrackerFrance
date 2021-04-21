@@ -33,12 +33,15 @@ struct HomeView: View {
             }.navigationBarTitle("Stats du jour ").navigationBarItems(leading: Button(action: { isShowing.toggle()}, label: {
                 Image(systemName: "info.circle")
             }), trailing:
-                Button(action: { stats.fetchData() ;showLastUpdate = true }, label: {
+                Button(action: { stats.fetchData() ;
+                        showLastUpdate = true }, label: {
                 Image(systemName: "arrow.clockwise")
                 }))
             
         }.onAppear(perform: {
-            stats.fetchData(); showLastUpdate.toggle()
+           
+            showLastUpdate.toggle()
+            
         }).accentColor(.red).sheet(isPresented: $isShowing, content: {
             InfoView(isPresented: $isShowing).environment(\.colorScheme, colorScheme).accentColor(.red)
         })
@@ -49,8 +52,7 @@ struct HomeView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
 
-        HomeView()
-        
+        HomeView()        
     }
 }
 
