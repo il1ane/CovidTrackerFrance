@@ -11,7 +11,7 @@ struct HomeView: View {
     
     @State private var showLastUpdate = false
     @State private var isShowing = false
-    @ObservedObject var stats = StatsViewModel()
+    @StateObject var stats = StatsViewModel()
     @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
@@ -38,7 +38,7 @@ struct HomeView: View {
                 }))
             
         }.onAppear(perform: {
-            stats.fetchData()
+            stats.fetchData(); showLastUpdate.toggle()
         }).accentColor(.red).sheet(isPresented: $isShowing, content: {
             InfoView(isPresented: $isShowing).environment(\.colorScheme, colorScheme).accentColor(.red)
         })

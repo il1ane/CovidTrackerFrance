@@ -10,7 +10,7 @@ import SwiftUI
 struct StatsView: View {
     
     @Binding var animate: Bool
-    @ObservedObject var stats = StatsViewModel()
+    @StateObject var stats = StatsViewModel()
     
     var body: some View {
         
@@ -104,10 +104,11 @@ struct StatsView: View {
                     Text("Dernière mise à jour de l'API :\n \(stats.stats?.lastUpdatedAtSource ?? DataSet.datas.lastUpdatedAtSource )")
                     }
                     
-                Text(StatsViewModel().stats?.sourceUrl ?? DataSet.datas.sourceUrl)
                 
                 Spacer()
-            }.padding()
+            }.padding().onAppear(perform: {
+                stats.fetchData()
+            })
             
         
     }
