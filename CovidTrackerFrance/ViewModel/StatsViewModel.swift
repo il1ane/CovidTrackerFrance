@@ -10,6 +10,7 @@ import Foundation
 class StatsViewModel: ObservableObject {
     
     @Published var stats: Stats?
+    @Published var loading = true
     
     func fetchStats() {
         guard let url = URL(string: "https://api.apify.com/v2/key-value-stores/ufVgKLP8ljtn3ufaU/records/LATEST?disableRedirect=true") else { return }
@@ -20,6 +21,7 @@ class StatsViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     
                     self.stats = decodedData
+                    self.loading = false
                     print("today stats loaded")
             
                 }

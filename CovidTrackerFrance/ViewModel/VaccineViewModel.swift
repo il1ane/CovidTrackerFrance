@@ -10,6 +10,7 @@ import Foundation
 class VaccineViewModel: ObservableObject {
     
     @Published var vaccines: Vaccine?
+    @Published var loading = true
     
     func fetchVaccine() {
         guard let url = URL(string: "https://covid-api.mmediagroup.fr/v1/vaccines?country=France") else { return }
@@ -20,7 +21,9 @@ class VaccineViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     
                     self.vaccines = decodedData
+                    self.loading = false
                     print("today stats loaded")
+                    
             
                 }
             }

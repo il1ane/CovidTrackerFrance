@@ -10,7 +10,7 @@ import Foundation
 class HistoryViewModel: ObservableObject {
     
     @Published var history: History?
-    
+    @Published var loading = true
 
     func fetchHistory() {
         guard let url = URL(string: "https://covid-api.mmediagroup.fr/v1/history?country=France&status=confirmed") else { return }
@@ -21,6 +21,7 @@ class HistoryViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     
                     self.history = decodedData
+                    self.loading = false
                     print("today's history loaded")
             
                 }

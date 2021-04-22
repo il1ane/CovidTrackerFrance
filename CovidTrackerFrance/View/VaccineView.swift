@@ -17,6 +17,13 @@ struct VaccineView: View {
             ScrollView {
                 Divider()
         VStack {
+            
+//            if vaccine.loading {
+//                VStack {
+//                ProgressView()
+//                }
+//            }
+            
             HStack {
                 
 //                StatsViewComponents(data: vaccine.vaccines?.all.peopleVaccinated ?? 0, dataTitle: "Vaccinated", color: .gre
@@ -26,7 +33,7 @@ struct VaccineView: View {
             }
            
             HStack {
-                StatsViewComponents(data: vaccine.vaccines?.all.peoplePartiallyVaccinated ?? 0, dataTitle: "Partiellement Vaccinés", color: .blue)
+                StatsViewComponents(data: vaccine.vaccines?.all.peoplePartiallyVaccinated ?? 0, dataTitle: "1ère dose", color: .blue)
                
                 StatsViewComponents(data: vaccine.vaccines?.all.peopleVaccinated ?? 0, dataTitle: "Vaccinés", color: .green)
             }

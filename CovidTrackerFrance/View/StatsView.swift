@@ -18,6 +18,14 @@ struct StatsView: View {
         
 //        .foregroundColor(.blue).bold().animation(animate ? .easeIn : .none)
             VStack {
+            
+                if stats.loading {
+                    VStack {
+                    ProgressView()
+                }.animation(.easeIn)
+                }
+                Spacer().frame(height : 10)
+                
                 
                 NavigationLink(
                     destination:         VStack {
