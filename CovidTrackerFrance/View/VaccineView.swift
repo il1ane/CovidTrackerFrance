@@ -9,6 +9,7 @@ import SwiftUI
 
 struct VaccineView: View {
     @ObservedObject var vaccine = VaccineViewModel()
+    @State private var apiCall = true
     
     var body: some View {
         
@@ -27,13 +28,16 @@ struct VaccineView: View {
             HStack {
                 StatsViewComponents(data: vaccine.vaccines?.all.peoplePartiallyVaccinated ?? 0, dataTitle: "Partiellement Vaccinés", color: .blue)
                
-                StatsViewComponents(data: vaccine.vaccines?.all.peopleVaccinated ?? 2, dataTitle: "Vaccinés", color: .green)
+                StatsViewComponents(data: vaccine.vaccines?.all.peopleVaccinated ?? 0, dataTitle: "Vaccinés", color: .green)
             }
           
         }.padding()
         }.navigationTitle("Vaccination")
         }.onAppear(perform: {
-                  //vaccine.fetchVaccine()
+            if apiCall == true  {
+            vaccine.fetchVaccine()
+                apiCall = false
+            }
                     })
     }
 }

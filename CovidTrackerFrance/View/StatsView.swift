@@ -11,6 +11,8 @@ struct StatsView: View {
     
     @Binding var animate: Bool
     @ObservedObject var stats = StatsViewModel()
+    @ObservedObject var history = HistoryViewModel()
+    @State private var apiCall = true
     
     var body: some View {
         
@@ -19,8 +21,14 @@ struct StatsView: View {
                 
                 NavigationLink(
                     destination:         VStack {
-                        DetailViewStyle(title: "Cas confirmés", text: "Le nombre de cas confirmés inclut le nombre de cas confirmés par tests RT-PCR issus de la base de données SI-DEP et le nombre de cas confirmés par test antigénique issus de Contact Covid", color: .blue, data: stats.stats?.infected ?? DataSet.datas.infected).padding()
                         
+                        DetailViewStyle(title: "Cas confirmés", text: "Le nombre de cas confirmés inclut le nombre de cas confirmés par tests RT-PCR issus de la base de données SI-DEP et le nombre de cas confirmés par test antigénique issus de Contact Covid", color: .blue, data: stats.stats?.infected ?? DataSet.datas.infected).padding().onAppear(perform: {
+                            history.fetchHistory()
+                        })
+                        
+                        Spacer()
+                        Text(history.history?.all.country ?? DataSet.historyData.all.country)
+
                       
                     }
 ,
@@ -69,7 +77,10 @@ struct StatsView: View {
                     }
                     
             }.padding().onAppear(perform: {
-              // stats.fetchStats()
+                if apiCall == true {
+                    stats.fetchStats()
+                    apiCall = false
+                }
             })
             
         
@@ -78,6 +89,12 @@ struct StatsView: View {
 
 struct StatsView_Previews: PreviewProvider {
     static var previews: some View {
-        StatsView(animate: .constant(true))
+        VStack {
+            StatsView(animate: .constant(true))
+            
+            
+          
+        }
+       // StatsView(animate: .constant(true))
     }
 }
