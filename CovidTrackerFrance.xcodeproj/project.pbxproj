@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		9113EB83262F0BCB00EE410A /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9113EB82262F0BCB00EE410A /* StatsViewModel.swift */; };
 		911C7764262CDB690096F2BE /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911C7763262CDB690096F2BE /* InfoView.swift */; };
+		912A46AE26319F67001851AB /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912A46AD26319F67001851AB /* Article.swift */; };
+		912A46B126319FB2001851AB /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912A46B026319FB2001851AB /* NewsView.swift */; };
 		91412D7426316D3700A1029A /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91412D7326316D3700A1029A /* History.swift */; };
 		91412D7726316DC900A1029A /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91412D7626316DC900A1029A /* HistoryViewModel.swift */; };
 		9162404126305A8D003910EA /* DetailViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9162404026305A8D003910EA /* DetailViewComponents.swift */; };
@@ -23,12 +25,15 @@
 		9183046E262B85AD009733FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9183046D262B85AD009733FC /* Assets.xcassets */; };
 		91830471262B85AD009733FC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91830470262B85AD009733FC /* Preview Assets.xcassets */; };
 		9183047C262B85F6009733FC /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9183047B262B85F6009733FC /* Stats.swift */; };
+		918ABA2F2631A12F00EF6F35 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918ABA2E2631A12F00EF6F35 /* NewsViewModel.swift */; };
 		91E5227D262C49BD00630D6B /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E5227C262C49BD00630D6B /* StatsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9113EB82262F0BCB00EE410A /* StatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModel.swift; sourceTree = "<group>"; };
 		911C7763262CDB690096F2BE /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		912A46AD26319F67001851AB /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		912A46B026319FB2001851AB /* NewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
 		91412D7326316D3700A1029A /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		91412D7626316DC900A1029A /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		9162404026305A8D003910EA /* DetailViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewComponents.swift; sourceTree = "<group>"; };
@@ -45,6 +50,7 @@
 		91830470262B85AD009733FC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		91830472262B85AD009733FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9183047B262B85F6009733FC /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
+		918ABA2E2631A12F00EF6F35 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
 		91B2225E2630D52A00AF9D01 /* Todo.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Todo.md; sourceTree = "<group>"; };
 		91E5227C262C49BD00630D6B /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -65,6 +71,7 @@
 			children = (
 				9113EB82262F0BCB00EE410A /* StatsViewModel.swift */,
 				91412D7626316DC900A1029A /* HistoryViewModel.swift */,
+				918ABA2E2631A12F00EF6F35 /* NewsViewModel.swift */,
 				917233172630B674007C1029 /* VaccineViewModel.swift */,
 			);
 			path = ViewModel;
@@ -99,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				91830469262B85AC009733FC /* CovidTrackerFranceApp.swift */,
+				9172331F2630BAA0007C1029 /* MainView.swift */,
 				91644DC9262C5831008AA17E /* .gitignore */,
 				91B2225E2630D52A00AF9D01 /* Todo.md */,
 				9113EB81262F0BB200EE410A /* ViewModel */,
@@ -123,6 +131,7 @@
 			children = (
 				917233102630B4AF007C1029 /* Vaccine.swift */,
 				91412D7326316D3700A1029A /* History.swift */,
+				912A46AD26319F67001851AB /* Article.swift */,
 				9183047B262B85F6009733FC /* Stats.swift */,
 			);
 			path = Model;
@@ -132,8 +141,8 @@
 			isa = PBXGroup;
 			children = (
 				9162404D263068EF003910EA /* Components */,
-				9172331F2630BAA0007C1029 /* MainView.swift */,
 				9183046B262B85AC009733FC /* HomeView.swift */,
+				912A46B026319FB2001851AB /* NewsView.swift */,
 				91E5227C262C49BD00630D6B /* StatsView.swift */,
 				917233132630B5FE007C1029 /* VaccineView.swift */,
 				911C7763262CDB690096F2BE /* InfoView.swift */,
@@ -213,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				917233112630B4AF007C1029 /* Vaccine.swift in Sources */,
+				912A46B126319FB2001851AB /* NewsView.swift in Sources */,
 				917233202630BAA0007C1029 /* MainView.swift in Sources */,
 				91E5227D262C49BD00630D6B /* StatsView.swift in Sources */,
 				9183046C262B85AC009733FC /* HomeView.swift in Sources */,
@@ -220,12 +230,14 @@
 				9183047C262B85F6009733FC /* Stats.swift in Sources */,
 				9162404126305A8D003910EA /* DetailViewComponents.swift in Sources */,
 				917233142630B5FE007C1029 /* VaccineView.swift in Sources */,
+				918ABA2F2631A12F00EF6F35 /* NewsViewModel.swift in Sources */,
 				9162404826305F96003910EA /* StatsViewComponents.swift in Sources */,
 				917233182630B674007C1029 /* VaccineViewModel.swift in Sources */,
 				91412D7426316D3700A1029A /* History.swift in Sources */,
 				911C7764262CDB690096F2BE /* InfoView.swift in Sources */,
 				9183046A262B85AC009733FC /* CovidTrackerFranceApp.swift in Sources */,
 				91412D7726316DC900A1029A /* HistoryViewModel.swift in Sources */,
+				912A46AE26319F67001851AB /* Article.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -77,19 +77,22 @@ struct StatsView: View {
                         StatsViewComponents(data: (stats.stats?.recoverd ?? DataSet.datas.recoverd), dataTitle: "Retours à domicile", color: .green)
                         })
                 }
-                Spacer()
+                
 
                 VStack(alignment : .center) {
-                        Spacer()
+                        
                     Text("Dernière mise à jour de l'API :\n \(stats.stats?.lastUpdatedAtSource ?? DataSet.datas.lastUpdatedAtSource )")
                     }
+                
                     
             }.padding().onAppear(perform: {
                 if apiCall == true {
                     stats.fetchStats()
                     apiCall = false
                 }
+                
             })
+        Spacer()
             
         
     }

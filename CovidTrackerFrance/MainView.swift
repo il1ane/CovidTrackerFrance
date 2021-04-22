@@ -15,16 +15,21 @@ struct MainView: View {
                     HomeView().tabItem { Label(
                         title: { Text("Stats") },
                         icon: { Image(systemName: "rectangle.3.offgrid") }
-) }.tag(1)
+                    ) }.tag(1)
                     
                     VaccineView().tabItem { Label(
                         title: { Text("Vaccins") },
                         icon: { Image(systemName: "heart.text.square") }
-)
+                    )
                     }.tag(2)
+                    
+                    NewsView().tabItem { Label(
+                        title: { Text("Articles") },
+                        icon: { Image(systemName: "newspaper") }
+                    ) }.tag(3)
                 })
     }
-    }
+}
 
 
 struct MainView_Previews: PreviewProvider {

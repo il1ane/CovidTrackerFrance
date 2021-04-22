@@ -41,11 +41,11 @@ struct VaccineView: View {
         }.padding()
         }.navigationTitle("Vaccination")
         }.onAppear(perform: {
-            if apiCall == true  {
-            vaccine.fetchVaccine()
+            if apiCall == true {
+                vaccine.fetchVaccine()
                 apiCall = false
             }
-                    })
+        })
     }
 }
 
