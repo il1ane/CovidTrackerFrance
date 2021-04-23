@@ -28,18 +28,7 @@ struct StatsView: View {
                 
                 
                 NavigationLink(
-                    destination:         VStack {
-                        
-                        DetailViewStyle(title: "Cas confirmés", text: "Le nombre de cas confirmés inclut le nombre de cas confirmés par tests RT-PCR issus de la base de données SI-DEP et le nombre de cas confirmés par test antigénique issus de Contact Covid", color: .blue, data: stats.stats?.infected ?? DataSet.datas.infected).padding().onAppear(perform: {
-                            history.fetchHistory()
-                        })
-                        
-                        Spacer()
-                        Text(history.history?.all.country ?? DataSet.historyData.all.country)
-
-                      
-                    }
-,
+                    destination:         HistoryView(),
                     label: {
                         StatsViewComponents(data: (stats.stats?.infected ?? DataSet.datas.infected), dataTitle: "Cas confirmés", color: .blue)
                         })

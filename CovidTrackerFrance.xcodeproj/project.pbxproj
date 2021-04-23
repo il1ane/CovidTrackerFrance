@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9113EB83262F0BCB00EE410A /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9113EB82262F0BCB00EE410A /* StatsViewModel.swift */; };
+		911866C42632C02900A18818 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911866C32632C02900A18818 /* HistoryView.swift */; };
 		911C7764262CDB690096F2BE /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911C7763262CDB690096F2BE /* InfoView.swift */; };
 		912A46AE26319F67001851AB /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912A46AD26319F67001851AB /* Article.swift */; };
 		912A46B126319FB2001851AB /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912A46B026319FB2001851AB /* NewsView.swift */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		9113EB82262F0BCB00EE410A /* StatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModel.swift; sourceTree = "<group>"; };
+		911866C32632C02900A18818 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		911C7763262CDB690096F2BE /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		912A46AD26319F67001851AB /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		912A46B026319FB2001851AB /* NewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				9162404D263068EF003910EA /* Components */,
 				9183046B262B85AC009733FC /* HomeView.swift */,
 				912A46B026319FB2001851AB /* NewsView.swift */,
+				911866C32632C02900A18818 /* HistoryView.swift */,
 				91E5227C262C49BD00630D6B /* StatsView.swift */,
 				917233132630B5FE007C1029 /* VaccineView.swift */,
 				911C7763262CDB690096F2BE /* InfoView.swift */,
@@ -228,6 +231,7 @@
 				9183046C262B85AC009733FC /* HomeView.swift in Sources */,
 				9113EB83262F0BCB00EE410A /* StatsViewModel.swift in Sources */,
 				9183047C262B85F6009733FC /* Stats.swift in Sources */,
+				911866C42632C02900A18818 /* HistoryView.swift in Sources */,
 				9162404126305A8D003910EA /* DetailViewComponents.swift in Sources */,
 				917233142630B5FE007C1029 /* VaccineView.swift in Sources */,
 				918ABA2F2631A12F00EF6F35 /* NewsViewModel.swift in Sources */,
