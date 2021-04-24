@@ -9,4 +9,4 @@ APIs utilisés :
 
 Données COVID_19 : https://apify.com/covid-19 (Source : https://dashboard.covid19.data.gouv.fr) 
 Données vaccination : https://github.com/M-Media-Group/Covid-19-AP
-Articles : https://newsapi.org 
+Articles à la une : https://newsapi.org 
