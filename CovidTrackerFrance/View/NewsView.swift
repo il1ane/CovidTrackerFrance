@@ -45,29 +45,27 @@ struct NewsView: View {
                                 
                                 
                                     
+                                VStack(alignment : .leading) {
                                     VStack {
+                                            
+                                            
+                                            Text(article.title).font(.title2).bold()
+                                            Spacer().frame(height: 10)
+                                            Text(article.content)
                                         
-                                        Text(article.title).font(.title)
-                                        Text(article.content)
-                                        Text(article.author ?? "")
-                                        Text(article.url)
-                                        
-                                  //     Link("Lire", destination: article.url)
-    //                                    NavigationLink(
-    //                                        destination: ArticleWebView(url: article.url),
-    //                                        isActive: /*@START_MENU_TOKEN@*/.constant(true)/*@END_MENU_TOKEN@*/,
-    //                                        label: {
-    //                                            /*@START_MENU_TOKEN@*/Text("Navigate")/*@END_MENU_TOKEN@*/
-    //                                        })
+                                        Spacer().frame(height : 10)
+                                            
                                         Button(action: {
-    
+                                            isPresented.toggle()
                                             url = article.url
-                                                isPresented.toggle()
+                                            
+                                                
                                         }, label: {
                                                     Text("Lire l'article").foregroundColor(.blue)
-                                                })
+                                        })
                                             
                                     }.rectangleStyle().padding()
+                                }
                                     
                                     
                                 
@@ -76,13 +74,8 @@ struct NewsView: View {
                    }
                     .sheet(isPresented: $isPresented, content: {
                         
+                            WebViewModal(url: $url, isPresented: $isPresented)
                         
-                        NavigationView {
-                        ArticleWebView(url: URL(string: url))
-                            .navigationBarItems(trailing: Button(action: { isPresented.toggle() }, label: {
-                                Text("Fermer")
-                            }))
-                        }
                     })
 
                 }.navigationBarTitle("Articles")

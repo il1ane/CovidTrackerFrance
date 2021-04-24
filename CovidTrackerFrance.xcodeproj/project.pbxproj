@@ -27,6 +27,7 @@
 		91830471262B85AD009733FC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91830470262B85AD009733FC /* Preview Assets.xcassets */; };
 		9183047C262B85F6009733FC /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9183047B262B85F6009733FC /* Stats.swift */; };
 		918ABA2F2631A12F00EF6F35 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918ABA2E2631A12F00EF6F35 /* NewsViewModel.swift */; };
+		91B5AC862634615900AB5C25 /* WebViewModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B5AC852634615900AB5C25 /* WebViewModal.swift */; };
 		91D7A4D7263445B2000A8E10 /* ArticleWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D7A4D6263445B2000A8E10 /* ArticleWebView.swift */; };
 		91E5227D262C49BD00630D6B /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E5227C262C49BD00630D6B /* StatsView.swift */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,7 @@
 		9183047B262B85F6009733FC /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
 		918ABA2E2631A12F00EF6F35 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
 		91B2225E2630D52A00AF9D01 /* Todo.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Todo.md; sourceTree = "<group>"; };
+		91B5AC852634615900AB5C25 /* WebViewModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModal.swift; sourceTree = "<group>"; };
 		91D7A4D6263445B2000A8E10 /* ArticleWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleWebView.swift; sourceTree = "<group>"; };
 		91E5227C262C49BD00630D6B /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -147,6 +149,7 @@
 				9162404D263068EF003910EA /* Components */,
 				9183046B262B85AC009733FC /* HomeView.swift */,
 				912A46B026319FB2001851AB /* NewsView.swift */,
+				91B5AC852634615900AB5C25 /* WebViewModal.swift */,
 				911866C32632C02900A18818 /* HistoryView.swift */,
 				91D7A4D6263445B2000A8E10 /* ArticleWebView.swift */,
 				91E5227C262C49BD00630D6B /* StatsView.swift */,
@@ -230,6 +233,7 @@
 				917233112630B4AF007C1029 /* Vaccine.swift in Sources */,
 				912A46B126319FB2001851AB /* NewsView.swift in Sources */,
 				917233202630BAA0007C1029 /* MainView.swift in Sources */,
+				91B5AC862634615900AB5C25 /* WebViewModal.swift in Sources */,
 				91E5227D262C49BD00630D6B /* StatsView.swift in Sources */,
 				9183046C262B85AC009733FC /* HomeView.swift in Sources */,
 				9113EB83262F0BCB00EE410A /* StatsViewModel.swift in Sources */,
