@@ -8,6 +8,7 @@
 import Foundation
 
 class NewsViewModel: ObservableObject {
+    
     @Published var news : News?
     @Published var loading = true
     
@@ -19,15 +20,19 @@ class NewsViewModel: ObservableObject {
         URLSession.shared.dataTask(with: url) { data, error, response in
             guard let data = data else { return }
             
+            
             if let decodedData = try? JSONDecoder().decode(News.self, from: data) {
                 DispatchQueue.main.async {
                     
                     self.news = decodedData
                     self.loading = false
-                    print("news loaded")
-            
+                    print(decodedData)
                 }
             }
+                
+            
+            
+            
         }.resume()
     }
 }

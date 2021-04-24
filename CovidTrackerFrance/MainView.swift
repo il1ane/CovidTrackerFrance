@@ -9,24 +9,24 @@ import SwiftUI
 
 struct MainView: View {
     var body: some View {
-        TabView(selection: .constant(1),
+        TabView(
                 content:  {
                     
                     HomeView().tabItem { Label(
                         title: { Text("Stats") },
                         icon: { Image(systemName: "rectangle.3.offgrid") }
-                    ) }.tag(1)
+                    ) }
                     
                     VaccineView().tabItem { Label(
                         title: { Text("Vaccins") },
                         icon: { Image(systemName: "heart.text.square") }
                     )
-                    }.tag(2)
+                    }
                     
                     NewsView().tabItem { Label(
                         title: { Text("Articles") },
                         icon: { Image(systemName: "newspaper") }
-                    ) }.tag(3)
+                    ) }
                 })
     }
 }
