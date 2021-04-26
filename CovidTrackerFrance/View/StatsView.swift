@@ -24,11 +24,12 @@ struct StatsView: View {
                     ProgressView()
                 }.animation(.easeIn)
                 }
-                Spacer().frame(height : 10)
+                
                 
                 
                 NavigationLink(
-                    destination:          DetailViewStyle(title: "Cas confirmés", text: "Le nombre de cas confirmés inclut le nombre de cas confirmés par tests RT-PCR issus de la base de données SI-DEP et le nombre de cas confirmés par test antigénique issus de Contact Covid", color: .blue, data: stats.stats?.infected ?? DataSet.datas.infected).padding(),
+                    destination:          DetailViewStyle(title: "Cas confirmés", text: "Le nombre de cas confirmés inclut le nombre de cas confirmés par tests RT-PCR issus de la base de données SI-DEP et le nombre de cas confirmés par test antigénique issus de Contact Covid", color: .blue, data: stats.stats?.infected ?? DataSet.datas.infected).padding()
+                    ,
                     label: {
                         StatsViewComponents(data: (stats.stats?.infected ?? DataSet.datas.infected), dataTitle: "Cas confirmés", color: .blue)
                         })
@@ -67,11 +68,11 @@ struct StatsView: View {
                         })
                 }
                 
-
-                VStack(alignment : .center) {
-                        
-                    Text("Dernière mise à jour de l'API :\n \(stats.stats?.lastUpdatedAtSource ?? DataSet.datas.lastUpdatedAtSource )")
-                    }
+               Spacer()
+//                VStack(alignment : .center) {
+//                        
+//                    Text("Dernière mise à jour de l'API :\n \(stats.stats?.lastUpdatedAtSource ?? DataSet.datas.lastUpdatedAtSource )")
+//                    }
                 
                     
             }.padding().onAppear(perform: {
@@ -81,7 +82,7 @@ struct StatsView: View {
                 }
                 
             })
-        Spacer()
+       
             
         
     }

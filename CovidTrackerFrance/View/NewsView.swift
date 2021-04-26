@@ -18,31 +18,30 @@ struct NewsView: View {
     
     var body: some View {
         
-        
+        ZStack {
+            
         NavigationView {
            
             ScrollView {
-                ZStack {
+                Divider()
+                
+                
+                if news.loading {
+
+                    ProgressView()
+
+                    
+                }
+                   
+                  
+
                     
                     VStack {
-                        if news.loading {
-                            
-                            ProgressView()
-                            
-                        }
+                      
 
-                
-                    
-                       
-                        
-                        
-                        
                     if news.loading == false {
                             
                             ForEach(news.news?.articles ?? example.articles, id: \.self) { article in
-                                
-                                
-                                
                                 
                                     
                                 VStack(alignment : .leading) {
@@ -64,21 +63,21 @@ struct NewsView: View {
                                                     Text("Lire l'article").foregroundColor(.blue)
                                         })
                                             
-                                    }.rectangleStyle().padding()
+                                    }.frame(minWidth: 0, idealWidth: 100, maxWidth: .infinity, minHeight: 0, idealHeight: 200, maxHeight: 400, alignment: .center).rectangleStyle().padding()
                                 }
                                     
                                     
                                 
                             }
                         }
-                   }
-                    .sheet(isPresented: $isPresented, content: {
-                        
-                            WebViewModal(url: $url, isPresented: $isPresented)
-                        
-                    })
+                   }.sheet(isPresented: $isPresented, content: {
+                    
+                    WebViewModal(url: $url, isPresented: $isPresented)
+                
+            })
+                    
 
-                }.navigationBarTitle("Articles")
+                }.navigationBarTitle("À la une")
             }
             
         }.onAppear(perform: {
@@ -86,7 +85,6 @@ struct NewsView: View {
                        news.fetchNews()
                         apiCall = false
                     }})
-                
             }
 }
 

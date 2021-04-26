@@ -28,9 +28,10 @@ struct News: Codable, Hashable {
 struct Article: Codable, Hashable {
     var source: Source
     var author: String?
-    var title, articleDescription: String
+    var title: String
+    var articleDescription: String?
     var url: String
-    var urlToImage: String
+    var urlToImage: String?
     var publishedAt, content: String
 
     enum CodingKeys: String, CodingKey {
@@ -48,10 +49,11 @@ struct Article: Codable, Hashable {
 
 // MARK: - Source
 struct Source: Codable, Hashable {
+    var id: String?
     var name: String
 }
 
-// MARK: - Encode/decode helpers
+
 
 
 

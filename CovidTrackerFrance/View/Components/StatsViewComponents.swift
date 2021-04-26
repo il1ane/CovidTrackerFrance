@@ -26,9 +26,9 @@ struct StatsViewComponents: View {
             }
             Spacer()
         }
-        .rectangleStyle()
+        
             
-        }
+        }.rectangleStyle()
         
        
         

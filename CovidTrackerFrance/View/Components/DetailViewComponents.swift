@@ -37,7 +37,7 @@ struct DetailViewStyle:View {
             Text("\(data)").font(.title).bold().foregroundColor(color)
         HStack {
             
-            Spacer()
+        
             
             VStack(alignment: .center) {
                 Image(systemName: "info.circle").font(.system(size: 33))
@@ -45,12 +45,13 @@ struct DetailViewStyle:View {
                 Spacer().frame(height : 10)
         Text(text)
             }
-            Spacer()
+          
             
         }
         .rectangleStyle()
-            Spacer()
+           
         }
+        Spacer()
         
         .navigationBarTitle(title)
         

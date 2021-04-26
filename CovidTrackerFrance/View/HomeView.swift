@@ -28,10 +28,10 @@ struct HomeView: View {
                         
                         StatsView(animate: $showLastUpdate)
                         
-                        Spacer()
+                        
                     }
                 }
-                    
+                        
             }.navigationBarTitle("Stats du jour ").navigationBarItems(trailing: Button(action: { isShowing.toggle()}, label: {
                 Image(systemName: "info.circle")
             }))
