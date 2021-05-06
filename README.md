@@ -12,10 +12,10 @@ Articles à la une : https://newsapi.org (clé nécessaire)
 
 📚 J'ai vu / appris :
 
-Utilsation d'un API simple
-URLSession, décoder des données JSON
-Le concept de l'architecture MVVM 
-Créer un graphique simple avec une petite animation
-Afficher une page web dans l'App avec WKWebView
-Afficher une ProgressView (roue de chargement) en attendant les données de l'API
-Les property wrapper @Published et @ObservedObject
+Utilsation d'un API simple  
+URLSession, décoder des données JSON  
+Le concept de l'architecture MVVM   
+Créer un graphique simple avec une petite animation  
+Afficher une page web dans l'App avec WKWebView  
+Afficher une ProgressView (roue de chargement) en attendant les données de l'API  
+Les property wrapper @Published et @ObservedObject  
